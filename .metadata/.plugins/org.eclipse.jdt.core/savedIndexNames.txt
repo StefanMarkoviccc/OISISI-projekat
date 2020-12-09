@@ -1,2 +1,3 @@
-INDEX VERSION 1.131+C:\Users\Markoviccc\Desktop\ProjekatOISISI\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.131+C:\Users\Markoviccc\Desktop\proba\OISISI-projekat\.metadata\.plugins\org.eclipse.jdt.core
 1067094681.index
+1574700500.index
