@@ -14,17 +14,12 @@ public class Profesor {
 	private String brLK;
 	private String titula;
 	private String zvanje;
+	private ArrayList<Predmet> predmeti;
+	
 
-	
-	
-	
-	
-	
-	
-	
-	
 	public Profesor(String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String telefon,
-			String email, String adresaKancelarije, String brLK, String titula, String zvanje) {
+			String email, String adresaKancelarije, String brLK, String titula, String zvanje,
+			ArrayList<Predmet> predmeti) {
 		super();
 		this.prezime = prezime;
 		this.ime = ime;
@@ -36,7 +31,7 @@ public class Profesor {
 		this.brLK = brLK;
 		this.titula = titula;
 		this.zvanje = zvanje;
-		
+		this.predmeti = predmeti;
 	}
 	public String getPrezime() {
 		return prezime;
@@ -97,6 +92,12 @@ public class Profesor {
 	}
 	public void setZvanje(String zvanje) {
 		this.zvanje = zvanje;
+	}
+	public ArrayList<Predmet> getPredmeti() {
+		return predmeti;
+	}
+	public void setPredmeti(ArrayList<Predmet> predmeti) {
+		this.predmeti = predmeti;
 	}
 	
 	
