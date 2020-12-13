@@ -20,7 +20,7 @@ public class Student {
 	public Student(
 	String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String kontaktTel,
 		String emailAdresa, String brIndexa, int godUpisa) {
-	//super();
+	super();
 	this.prezime = prezime;
 	this.ime = ime;
 	this.datumR = datumR;
