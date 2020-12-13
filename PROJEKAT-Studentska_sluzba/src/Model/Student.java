@@ -1,5 +1,9 @@
 package Model;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import Enums.Status;
+import Enums.TrenutnaGodina;
 
 public class Student {
 	
@@ -12,6 +16,10 @@ public class Student {
 	private String brIndexa;
 	private int godUpisa;
 	private double prosecnaOcena;
+	private TrenutnaGodina godina;
+	private Status status;
+	private ArrayList<Ocena> ocene;
+	private ArrayList<Predmet> nepolozeniPredmeti;
 	
 	
 	
@@ -19,7 +27,7 @@ public class Student {
 	
 	public Student(
 	String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String kontaktTel,
-		String emailAdresa, String brIndexa, int godUpisa) {
+		String emailAdresa, String brIndexa, int godUpisa,TrenutnaGodina godina, Status status) {
 	super();
 	this.prezime = prezime;
 	this.ime = ime;
@@ -29,14 +37,70 @@ public class Student {
 	this.emailAdresa = emailAdresa;
 	this.brIndexa = brIndexa;
 	this.godUpisa = godUpisa;
-	//this.godina = godina;
-	//this.status = status;
-	//this.ocene = new ArrayList<Ocena>();
-	//this.nepolozeniPredmeti = new ArrayList<Predmet>() ;
+	this.godina = godina;
+	this.status = status;
+	this.ocene = new ArrayList<Ocena>();
+	this.nepolozeniPredmeti = new ArrayList<Predmet>() ;
 	}
 	
 	
 	
+
+	public TrenutnaGodina getGodina() {
+		return godina;
+	}
+
+
+
+
+	public void setGodina(TrenutnaGodina godina) {
+		this.godina = godina;
+	}
+
+
+
+
+	public Status getStatus() {
+		return status;
+	}
+
+
+
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+
+
+
+	public ArrayList<Ocena> getOcene() {
+		return ocene;
+	}
+
+
+
+
+	public void setOcene(ArrayList<Ocena> ocene) {
+		this.ocene = ocene;
+	}
+
+
+
+
+	public ArrayList<Predmet> getNepolozeniPredmeti() {
+		return nepolozeniPredmeti;
+	}
+
+
+
+
+	public void setNepolozeniPredmeti(ArrayList<Predmet> nepolozeniPredmeti) {
+		this.nepolozeniPredmeti = nepolozeniPredmeti;
+	}
+
+
+
 
 	public String getPrezime() {
 		return prezime;
