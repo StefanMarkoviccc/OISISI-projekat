@@ -15,6 +15,7 @@ public class WorkSpace extends JPanel{
 	private JTable tableProfesori;
 	private JTable tablePredmeti;
 	private DefaultTableModel tmStudenti;
+	private DefaultTableModel tmProfesori;
 	
 	
 	
@@ -32,6 +33,10 @@ public class WorkSpace extends JPanel{
 		Object[] stud = {"Index","Ime","Prezime","Godina studija","Status","Prosek"};
 		tmStudenti = new DefaultTableModel(stud,0);
 		tableStudenti = new JTable(tmStudenti);
+		
+		Object[] prof = {"Ime","Prezime","Titula","Zvanje"};
+		tmProfesori = new DefaultTableModel(prof,0);
+		tableProfesori = new JTable(tmProfesori);
 		
 		JScrollPane scrollStudenti = new JScrollPane(tableStudenti);
 		JScrollPane scrollProfesori = new JScrollPane(tableProfesori);
@@ -97,6 +102,8 @@ public class WorkSpace extends JPanel{
 		this.tablePredmeti = tablePredmeti;
 	}
 	
-	
+	public void setTmProfesori(DefaultTableModel tmProfesori) {
+		this.tmProfesori = tmProfesori;
+	}	
 
 }
