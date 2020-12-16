@@ -9,6 +9,8 @@ public class MainWindow extends JFrame {
 	
 	private StatusBar status;
 	private static MainWindow instance;
+	private WorkSpace workSpace;
+
 
 	public static MainWindow getInstance() 
 	{
@@ -27,9 +29,18 @@ public class MainWindow extends JFrame {
 		setLayout(new BorderLayout());
 		status = new StatusBar();
 		add(status,BorderLayout.SOUTH);
+		workSpace = new WorkSpace();
+		add(workSpace,BorderLayout.CENTER);
 		
 	}
 
+	public WorkSpace getWorkSpace() {
+		return workSpace;
+	}
+
+	public void setWorkSpace(WorkSpace workSpace) {
+		this.workSpace = workSpace;
+	}
 
 	
 	
