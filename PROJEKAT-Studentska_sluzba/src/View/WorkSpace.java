@@ -14,6 +14,7 @@ public class WorkSpace extends JPanel{
 	private JTable tableStudenti;
 	private JTable tableProfesori;
 	private JTable tablePredmeti;
+	private DefaultTableModel tmStudenti;
 	
 	
 	
@@ -28,7 +29,9 @@ public class WorkSpace extends JPanel{
 		pnlProfesori.setLayout(new BorderLayout());
 		pnlPredmeti.setLayout(new BorderLayout());
 		
-		
+		Object[] stud = {"Index","Ime","Prezime","Godina studija","Status","Prosek"};
+		tmStudenti = new DefaultTableModel(stud,0);
+		tableStudenti = new JTable(tmStudenti);
 		
 		JScrollPane scrollStudenti = new JScrollPane(tableStudenti);
 		JScrollPane scrollProfesori = new JScrollPane(tableProfesori);
