@@ -5,8 +5,19 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import Model.Model;
+
 public class MainWindow extends JFrame {
 	
+	private Model model;
+	public Model getModel() {
+		return model;
+	}
+
+	public void setModel(Model model) {
+		this.model = model;
+	}
+
 	private StatusBar status;
 	private static MainWindow instance;
 	private WorkSpace workSpace;

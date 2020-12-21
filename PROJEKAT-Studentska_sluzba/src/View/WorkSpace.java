@@ -20,6 +20,24 @@ public class WorkSpace extends JPanel{
 	
 	
 	
+	public DefaultTableModel getTmStudenti() {
+		return tmStudenti;
+	}
+
+
+
+	public void setTmStudenti(DefaultTableModel tmStudenti) {
+		this.tmStudenti = tmStudenti;
+	}
+
+
+
+	public DefaultTableModel getTmProfesori() {
+		return tmProfesori;
+	}
+
+
+
 	public WorkSpace()
 	{
 		setLayout(new BorderLayout());
