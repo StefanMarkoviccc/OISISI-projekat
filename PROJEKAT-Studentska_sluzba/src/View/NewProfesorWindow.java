@@ -17,8 +17,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import Controlers.ButtonOdustaniControllerProf;
-import Controlers.ButtonPotvrdiControllerProf;
+
 
 
 public class NewProfesorWindow extends JFrame{

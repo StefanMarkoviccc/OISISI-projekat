@@ -33,6 +33,23 @@ public class Profesor {
 		this.zvanje = zvanje;
 		this.predmeti = predmeti;
 	}
+	
+	public Profesor(String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String telefon,
+			String email, String adresaKancelarije, String brLK, String titula, String zvanje) {
+		super();
+		this.prezime = prezime;
+		this.ime = ime;
+		this.datumR = datumR;
+		this.adresaStanovanja = adresaStanovanja;
+		this.telefon = telefon;
+		this.email = email;
+		this.adresaKancelarije = adresaKancelarije;
+		this.brLK = brLK;
+		this.titula = titula;
+		this.zvanje = zvanje;
+		this.predmeti = new ArrayList<Predmet>();
+	}
+	
 	public String getPrezime() {
 		return prezime;
 	}
