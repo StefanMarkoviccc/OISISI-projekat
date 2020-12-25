@@ -17,6 +17,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import Controllers.ButtonOdustaniControllerProf;
+import Controllers.ButtonPotvrdiControllerProf;
+
 
 
 
@@ -68,7 +71,7 @@ public class NewProfesorWindow extends JFrame{
 		setPreferredSize(new Dimension(800,600));
 		pack();
 		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		
+		add(mainPanel, BorderLayout.CENTER);
 		
 		lblIme= new JLabel("Ime");
 		lblPrezime= new JLabel("Prezime");
@@ -80,8 +83,8 @@ public class NewProfesorWindow extends JFrame{
 		lblBrojLicneKarte= new JLabel("Broj Licne Karte");
 		lblTitula= new JLabel("Titula");
 		lblZvanje= new JLabel("Zvanje");
-		btnPotvrdi= new JButton("Potvrdi");
-		btnOdustani= new JButton("Odustani");
+		btnPotvrdi= new JButton(new ButtonPotvrdiControllerProf());
+		btnOdustani= new JButton(new ButtonOdustaniControllerProf());
 	
 		
 		txtIme= new JTextField();

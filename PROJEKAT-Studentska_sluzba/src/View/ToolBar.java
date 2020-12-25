@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Controllers.NewEntityController;
+
 
 
 public class ToolBar extends JPanel {
@@ -30,7 +32,7 @@ public class ToolBar extends JPanel {
 		left.setLayout(new FlowLayout(FlowLayout.LEFT));
 		right.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
-		btnAdd = new JButton("Add");
+		btnAdd = new JButton(new NewEntityController());
 		btnAdd.setText("+");
 		btnEdit = new JButton("Edit");
 		btnDelete = new JButton("Delete");
