@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 import View.MainWindow;
+import View.NewProfesorWindow;
 import View.NewStudentWindow;
 
 public class NewEntityController extends AbstractAction
@@ -23,7 +24,7 @@ public class NewEntityController extends AbstractAction
 		}
 		else if(index==1) 
 		{
-			
+			NewProfesorWindow.getInstance().show();
 			
 		}
 		else 
