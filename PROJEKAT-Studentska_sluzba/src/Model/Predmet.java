@@ -18,7 +18,7 @@ public class Predmet {
 	
 	
 	public Predmet(String sifraPr, String nazivPr, Semestar semestar, TrenutnaGodina godStudija, Profesor profesor,
-			int espb, ArrayList<Student> poloziliPr, ArrayList<Student> paliPr) {
+			int espb) {
 		super();
 		this.sifraPr = sifraPr;
 		NazivPr = nazivPr;
@@ -26,8 +26,8 @@ public class Predmet {
 		this.godStudija = godStudija;
 		this.profesor = profesor;
 		this.espb = espb;
-		this.poloziliPr = poloziliPr;
-		this.paliPr = paliPr;
+		this.poloziliPr = new ArrayList<Student>();
+		this.paliPr =new ArrayList<Student>();
 	}
 	public String getSifraPr() {
 		return sifraPr;
