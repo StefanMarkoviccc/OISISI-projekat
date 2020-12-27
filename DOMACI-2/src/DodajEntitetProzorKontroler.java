@@ -10,8 +10,15 @@ public class DodajEntitetProzorKontroler  extends AbstractAction
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		NewStudentWindow.getInstance().show();
+	
+		int i = MainWindow.getInstance().getWorkSpace().getTabs().getSelectedIndex();
 		
+		if(i==0) {
+		
+		NewStudentWindow.getInstance().show();
+		}else if(i==1){
+			NewProfesorWindow.getInstance().show();
+		}
 		
 	}
 
