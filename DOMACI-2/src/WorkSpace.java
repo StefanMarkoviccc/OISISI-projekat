@@ -13,6 +13,8 @@ public class WorkSpace extends JPanel{
 	private JTabbedPane tabs;
 	private JTable tableProfesori;
 	private DefaultTableModel tmProfesori;
+	private JTable tableStudenti;
+	private DefaultTableModel tmStudenti;
 	
 	
 	
@@ -29,10 +31,17 @@ public class WorkSpace extends JPanel{
 		tableProfesori = new JTable(tmProfesori);
 		
 		JScrollPane scrollProfesori = new JScrollPane(tableProfesori);
-		
+		Object[] stud = {"Index","Ime","Prezime","Godina studija","Status","Prosek"};
+		tmStudenti = new DefaultTableModel(stud,0);
+		tableStudenti = new JTable(tmStudenti);
+		JScrollPane scrollStudenti = new JScrollPane(tableStudenti);
+		JPanel pnlStudenti = new JPanel();
+		pnlStudenti.setLayout(new BorderLayout());
+		pnlStudenti.add(scrollStudenti,BorderLayout.CENTER);
 		pnlProfesori.add(scrollProfesori,BorderLayout.CENTER);
 		
 		tabs = new JTabbedPane();
+		tabs.add("Studenti",pnlStudenti);
 		tabs.add("Profesori",pnlProfesori);
 		
 		add(tabs,BorderLayout.CENTER);
