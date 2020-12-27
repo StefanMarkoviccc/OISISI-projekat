@@ -12,6 +12,7 @@ public class DodajEntitetProzorKontroler  extends AbstractAction
 	public void actionPerformed(ActionEvent arg0) {
 		NewStudentWindow.getInstance().show();
 		
+		
 	}
 
 }

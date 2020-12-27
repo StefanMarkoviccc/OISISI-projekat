@@ -48,5 +48,30 @@ public class MainWindow extends JFrame{
 	public void setModel(Model model) {
 		this.model = model;
 	}
+
+
+
+	public WorkSpace getWorkSpace() {
+		return workSpace;
+	}
+
+
+
+	public void setWorkSpace(WorkSpace workSpace) {
+		this.workSpace = workSpace;
+	}
+
+
+
+	public ToolBar getToolBar() {
+		return toolBar;
+	}
+
+
+
+	public void setToolBar(ToolBar toolBar) {
+		this.toolBar = toolBar;
+	}
+	
 	
 }
