@@ -1,9 +1,12 @@
+package Kontroleri;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+
+import View.MainWindow;
 
 public class AboutControler  extends AbstractAction
 {

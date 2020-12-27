@@ -1,6 +1,10 @@
+package Model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
+import Enums.Status;
+import Enums.TrenutnaGodina;
 
 
 public class Student implements Serializable {

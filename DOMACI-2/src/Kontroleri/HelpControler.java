@@ -1,3 +1,4 @@
+package Kontroleri;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import View.MainWindow;
 
 public class HelpControler extends AbstractAction{
 

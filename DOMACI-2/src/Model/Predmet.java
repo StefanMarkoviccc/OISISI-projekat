@@ -1,5 +1,9 @@
+package Model;
 
 import java.util.ArrayList;
+
+import Enums.Semestar;
+import Enums.TrenutnaGodina;
 
 
 public class Predmet {

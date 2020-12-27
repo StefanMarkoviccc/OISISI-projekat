@@ -1,9 +1,14 @@
+package View;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+
+import Kontroleri.AboutControler;
+import Kontroleri.DodajEntitetProzorKontroler;
+import Kontroleri.HelpControler;
 
 public class MenuBar extends JMenuBar {
 	

@@ -1,6 +1,11 @@
+package Kontroleri;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+
+import View.MainWindow;
+import View.NewProfesorWindow;
+import View.NewStudentWindow;
 
 public class DodajEntitetProzorKontroler  extends AbstractAction
 {
