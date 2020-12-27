@@ -30,6 +30,24 @@ public class MenuBar extends JMenuBar {
 		helpItem.setMnemonic(KeyEvent.VK_A);
 		
 		
+		newItem.setAccelerator(KeyStroke.getKeyStroke(
+			    KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK));
+		
+		closeItem.setAccelerator(KeyStroke.getKeyStroke(
+			    KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK));
+		
+		editItem.setAccelerator(KeyStroke.getKeyStroke(
+			    KeyEvent.VK_E, KeyEvent.CTRL_DOWN_MASK));
+		
+		deleteItem.setAccelerator(KeyStroke.getKeyStroke(
+			    KeyEvent.VK_D, KeyEvent.CTRL_DOWN_MASK));
+		
+		helpItem.setAccelerator(KeyStroke.getKeyStroke(
+			    KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK));
+		
+		
+		aboutItem.setAccelerator(KeyStroke.getKeyStroke(
+			    KeyEvent.VK_A, KeyEvent.CTRL_DOWN_MASK));
 		
 		file.add(newItem);
 		file.add(closeItem);
