@@ -23,7 +23,7 @@ public class ToolBar extends JPanel {
 		left.setLayout(new FlowLayout(FlowLayout.LEFT));
 		left.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
-		btnDodaj = new JButton("Add");
+		btnDodaj = new JButton(new DodajEntitetProzorKontroler());
 		btnEdit = new JButton("Edit");
 		btnIzbrisi = new JButton("Delete");
 		btnPretrazi = new JButton("Search");
