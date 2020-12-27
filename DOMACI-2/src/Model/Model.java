@@ -9,7 +9,19 @@ public class Model implements Serializable {
 	private ArrayList<Profesor> profesori;
 	private ArrayList<Predmet> predmeti;
 	
-
+	public boolean addProfesora(Profesor p) 
+	{
+		for(int i=0;i<profesori.size();i++) 
+		{
+			if(profesori.get(i).getBrLK()==p.getBrLK()) 
+			{
+				return false;
+			}
+			profesori.add(p);
+		}
+		return true;
+	}
+	
 	public boolean deleteOcena(Ocena o) 
 	{
 		for(int i=0;i<ocene.size();i++) 
