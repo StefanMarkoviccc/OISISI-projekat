@@ -3,11 +3,16 @@ import java.time.LocalDateTime;
 
 public class Ocena implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1098667057938323360L;
 	private Student student;
 	private Predmet predmet;
 	private int ocena;
 	private LocalDateTime datumPolaganja;
-	public Ocena(Student student, Predmet predmet, int ocena, LocalDateTime datumPolaganja) {
+	public Ocena(Student student, Predmet predmet, int ocena, LocalDateTime datumPolaganja)
+	{
 		super();
 		this.student = student;
 		this.predmet = predmet;
