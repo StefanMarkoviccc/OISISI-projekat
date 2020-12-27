@@ -18,6 +18,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import Kontroleri.ButtonOdustaniControllerProf;
+import Kontroleri.ButtonPotvrdiContollerProf;
+
 
 
 public class NewProfesorWindow extends JFrame{
@@ -80,8 +83,8 @@ public class NewProfesorWindow extends JFrame{
 		lblBrojLicneKarte= new JLabel("Broj Licne Karte");
 		lblTitula= new JLabel("Titula");
 		lblZvanje= new JLabel("Zvanje");
-		btnPotvrdi= new JButton("Potvrdi");
-		btnOdustani= new JButton("Odustani");
+		btnPotvrdi= new JButton(new ButtonPotvrdiContollerProf());
+		btnOdustani= new JButton(new ButtonOdustaniControllerProf());
 		
 		
 		txtIme= new JTextField();

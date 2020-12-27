@@ -26,7 +26,7 @@ public class NewEntitetContoller extends AbstractAction
 		else if(index==1) 
 		{
 			
-			
+			NewProfesorWindow.getInstance().show();
 		}
 		else 
 		{
