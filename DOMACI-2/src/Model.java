@@ -5,6 +5,7 @@ public class Model implements Serializable {
 	private static final long serialVersionUID = -3478224963893009178L;
 	private ArrayList<Student> studenti;
 	private ArrayList<Ocena> ocene;
+	private ArrayList<Profesor> profesori;
 	
 
 	public boolean deleteOcena(Ocena o) 
@@ -106,8 +107,10 @@ public class Model implements Serializable {
 	{
 		studenti = new ArrayList<Student>();
 		ocene = new ArrayList<Ocena>();
+		profesori = new ArrayList<Profesor>();
 	}
 	
+
 	
 	
 	public ArrayList<Student> getStudenti() {
