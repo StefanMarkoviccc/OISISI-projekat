@@ -6,6 +6,7 @@ public class Model implements Serializable {
 	private ArrayList<Student> studenti;
 	private ArrayList<Ocena> ocene;
 	private ArrayList<Profesor> profesori;
+	private ArrayList<Predmet> predmeti;
 	
 
 	public boolean deleteOcena(Ocena o) 
@@ -108,6 +109,7 @@ public class Model implements Serializable {
 		studenti = new ArrayList<Student>();
 		ocene = new ArrayList<Ocena>();
 		profesori = new ArrayList<Profesor>();
+		predmeti = new ArrayList<Predmet>();
 	}
 	
 
