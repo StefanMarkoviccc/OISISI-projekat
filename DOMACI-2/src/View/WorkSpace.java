@@ -85,4 +85,28 @@ public class WorkSpace extends JPanel{
 	}
 
 
+
+	public JTable getTableStudenti() {
+		return tableStudenti;
+	}
+
+
+
+	public void setTableStudenti(JTable tableStudenti) {
+		this.tableStudenti = tableStudenti;
+	}
+
+
+
+	public DefaultTableModel getTmStudenti() {
+		return tmStudenti;
+	}
+
+
+
+	public void setTmStudenti(DefaultTableModel tmStudenti) {
+		this.tmStudenti = tmStudenti;
+	}
+
+
 }
