@@ -13,6 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Kontroleri.AddStudentController;
+import Kontroleri.CancelController;
+
 
 public class NewStudentWindow extends JFrame{
 	
@@ -96,9 +99,9 @@ public class NewStudentWindow extends JFrame{
 		txtGodUpisa.setPreferredSize(dim);
 		cmbNacinFin = new JComboBox<String>();
 		cmbTrGodStud = new JComboBox<String>();
-		btnOdustani = new JButton("Cancel");
+		btnOdustani = new JButton(new CancelController());
 		btnOdustani.setPreferredSize(dim);
-		btnPotvrdi = new JButton("Dodaj");
+		btnPotvrdi = new JButton(new AddStudentController());
 		btnPotvrdi.setPreferredSize(dim);
 		
 		cmbTrGodStud.addItem("I(prva)");
