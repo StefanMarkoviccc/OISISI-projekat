@@ -22,7 +22,14 @@ public class MenuBar extends JMenuBar {
 		JMenuItem deleteItem = new JMenuItem("Delete");
 		JMenuItem helpItem = new JMenuItem("Help");
 		JMenuItem aboutItem = new JMenuItem("About");
-	
+		
+		newItem.setMnemonic(KeyEvent.VK_N);
+		closeItem.setMnemonic(KeyEvent.VK_C);
+		editItem.setMnemonic(KeyEvent.VK_E);
+		deleteItem.setMnemonic(KeyEvent.VK_D);
+		helpItem.setMnemonic(KeyEvent.VK_A);
+		
+		
 		
 		file.add(newItem);
 		file.add(closeItem);
