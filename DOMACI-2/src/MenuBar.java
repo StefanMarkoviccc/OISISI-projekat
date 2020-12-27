@@ -20,7 +20,7 @@ public class MenuBar extends JMenuBar {
 		JMenuItem closeItem = new JMenuItem("Close");
 		JMenuItem editItem = new JMenuItem("Edit");
 		JMenuItem deleteItem = new JMenuItem("Delete");
-		JMenuItem helpItem = new JMenuItem("Help");
+		JMenuItem helpItem = new JMenuItem(new HelpControler());
 		JMenuItem aboutItem = new JMenuItem(new AboutControler());
 		
 		//mneumonici
@@ -28,7 +28,8 @@ public class MenuBar extends JMenuBar {
 		closeItem.setMnemonic(KeyEvent.VK_C);
 		editItem.setMnemonic(KeyEvent.VK_E);
 		deleteItem.setMnemonic(KeyEvent.VK_D);
-		helpItem.setMnemonic(KeyEvent.VK_A);
+		helpItem.setMnemonic(KeyEvent.VK_H);
+		aboutItem.setMnemonic(KeyEvent.VK_A);
 		
 		//akceleratori
 		newItem.setAccelerator(KeyStroke.getKeyStroke(
