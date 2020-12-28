@@ -8,6 +8,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import Model.Predmet;
 import Model.Student;
 
 public class WorkSpace extends JPanel{
@@ -151,5 +152,17 @@ public class WorkSpace extends JPanel{
 			MainWindow.getInstance().getWorkSpace().getTmStudenti().addRow(data);	
 		}
 	}
+	
+	public static  void insertTablePredmet() 
+	{
+		for(int i=0; i<MainWindow.getInstance().getModel().getPredmeti().size(); i++)
+		{
+			Predmet p = MainWindow.getInstance().getModel().getPredmeti().get(i);
+			Object[] data = {p.getSifraPr(),p.getNazivPr(),p.getEspb(),p.getGodStudija(),p.getSemestar()};
+			MainWindow.getInstance().getWorkSpace().getTmPredmeti().addRow(data);
+		}
+	}
+	
+	
 	
 }

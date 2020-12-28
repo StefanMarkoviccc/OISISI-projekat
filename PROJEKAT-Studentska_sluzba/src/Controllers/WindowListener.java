@@ -15,6 +15,7 @@ public class WindowListener extends WindowAdapter
 	{
 		//DataSaveClass.Deserijalizacija( ".\\DataSave\\data.ss");
 		WorkSpace.insertTableStudent();
+		WorkSpace.insertTablePredmet();
 	}
 	
 	public void windowClosing(WindowEvent e) 
