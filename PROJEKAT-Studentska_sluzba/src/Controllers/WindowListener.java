@@ -12,7 +12,7 @@ public class WindowListener extends WindowAdapter
 	
 	public void windowOpened(WindowEvent e) 
 	{
-		DataSaveClass.Deserijalizacija( ".\\DataSave\\data.ss");		
+		//DataSaveClass.Deserijalizacija( ".\\DataSave\\data.ss");		
 	}
 	
 	public void windowClosing(WindowEvent e) 
