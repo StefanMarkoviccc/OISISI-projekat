@@ -36,6 +36,7 @@ public class MainWindow extends JFrame {
 	
 	public MainWindow()
 	{
+		model=new Model();
 		this.addWindowListener(new WindowListener());
 		setPreferredSize(new Dimension(500, 500));
 		pack();
