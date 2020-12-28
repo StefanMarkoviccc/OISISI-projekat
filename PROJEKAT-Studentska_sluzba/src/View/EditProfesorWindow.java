@@ -45,14 +45,14 @@ public class EditProfesorWindow extends JFrame{
 	
 	private JButton btnPotvrdi;
 	private JButton btnOdustani;
-	private static NewProfesorWindow instance;
+	private static EditProfesorWindow instance;
 	
-	public static NewProfesorWindow getInstance() 
+	public static EditProfesorWindow getInstance() 
 	{
 		if(instance==null) 
 		{
 			
-			instance=new NewProfesorWindow();
+			instance=new EditProfesorWindow();
 		}
 		return instance;
 		
