@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Controllers.AddStudentController;
+
 
 public class NewStudentWindow extends JFrame{
 	
@@ -98,7 +100,7 @@ public class NewStudentWindow extends JFrame{
 		cmbTrGodStud = new JComboBox<String>();
 		btnOdustani = new JButton("Odustani");
 		btnOdustani.setPreferredSize(dim);
-		btnPotvrdi = new JButton("Potvrdi");
+		btnPotvrdi = new JButton(new AddStudentController());
 		btnPotvrdi.setPreferredSize(dim);
 		
 		cmbTrGodStud.addItem("I(prva)");
