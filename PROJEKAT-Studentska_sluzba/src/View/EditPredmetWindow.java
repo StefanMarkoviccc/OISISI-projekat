@@ -7,337 +7,490 @@ import java.awt.FlowLayout;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 import Controllers.ButtonOdustaniControllerProf;
 import Controllers.ButtonPotvrdiControllerProf;
 
 public class EditPredmetWindow extends JFrame
 {
-	private JTextField txtIme;
-	private JTextField txtPrezime;
-	private JTextField txtDatumRodjenja;
-	private JTextField txtAdresaStanovanja;
-	private JTextField txtBrojTelefona;
-	private JTextField txtEmail;
-	private JTextField txtAdresaKancelarije;
-	private JTextField txtBrojLicneKarte;
-	private JTextField txtTitula;
-	private JTextField txtZvanje;
+	private JTextField txtSifraPred;
+	private JTextField txtNazivPred;
+	private JComboBox<String> cmbSemestar;
+	private JComboBox<String> cmbTrGodStud;
+	private JTextField txtProfesor;
+	private JTextField txtESPB;
 	
-	private JLabel lblIme;
-	private JLabel lblPrezime;
-	private JLabel lblDatumRodjenja;
-	private JLabel lblAdresaStanovanja;
-	private JLabel lblBrojTelefona;
-	private JLabel lblEmail;
-	private JLabel lblAdresaKancelarije;
-	private JLabel lblBrojLicneKarte;
-	private JLabel lblTitula;
-	private JLabel lblZvanje;
-
 	
+	private static EditPredmetWindow instance;
+	private JLabel labelaSifraPred;
+	private JLabel labelaNazivPred;
+	private JLabel labelaSemestar;
+	private JLabel labelaGodStud;
+	private JLabel labelaProfesor;
+	private JLabel labelaESPB;
+	private JLabel labelaGodUpisa;
+	private JLabel labelaTrGodStud;
+	private JLabel labelaPolozili;
+	private JLabel labelaPali;
 	private JButton btnPotvrdi;
 	private JButton btnOdustani;
-	private static EditPredmetWindow instance;
-	
-	public static EditPredmetWindow getInstance() 
-	{
-		if(instance==null) 
-		{
-			
-			instance=new EditPredmetWindow();
-		}
-		return instance;
-		
-	}
+	private DefaultTableModel tmPolozili;
+	private DefaultTableModel tmPali;
+	private JTable tablePolozili;
+	private JTable tablePali;
+	private JTabbedPane tabs;
 	
 	public EditPredmetWindow() 
 	{
-		Dimension dim= new Dimension(200,20);
 		setLayout(new BorderLayout());
-		JPanel mainPanel= new JPanel();
 		setPreferredSize(new Dimension(800,600));
 		pack();
-		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		add(mainPanel, BorderLayout.CENTER);
+		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		labelaGodUpisa = new JLabel("Godina upisa");
+		labelaSifraPred = new JLabel("Sifra predmeta");
+		labelaNazivPred = new JLabel("Naziv predmeta");
+		labelaSemestar = new JLabel("Semestar");
+		labelaGodStud = new JLabel("Godina studija u kojoj se pred izvodi");
+		labelaProfesor = new JLabel("Predmeti profesor");
+		labelaESPB = new JLabel("Broj ESPB bodova");
+		labelaPolozili = new JLabel("Spisak stud koji su polozili");
+		labelaPali = new JLabel("Spisak stud koji su pali");
+		btnPotvrdi = new JButton("Potvrdi");
+		btnOdustani = new JButton(new ButtonOdustaniControllerProf());
 		
-		lblIme= new JLabel("Ime");
-		lblPrezime= new JLabel("Prezime");
-		lblDatumRodjenja= new JLabel("Datum Rodjenja");
-		lblAdresaStanovanja= new JLabel("Adresa Stanovanja");
-		lblBrojTelefona= new JLabel("Broj Telefona");
-		lblEmail= new JLabel("Email");
-		lblAdresaKancelarije= new JLabel("Adresa Kancelarije");
-		lblBrojLicneKarte= new JLabel("Broj Licne Karte");
-		lblTitula= new JLabel("Titula");
-		lblZvanje= new JLabel("Zvanje");
-		btnPotvrdi= new JButton(new ButtonPotvrdiControllerProf());
-		btnOdustani= new JButton(new ButtonOdustaniControllerProf());
-	
-		
-		txtIme= new JTextField();
-		txtIme.setPreferredSize(dim);
-		txtPrezime= new JTextField();
-		txtPrezime.setPreferredSize(dim);
-		txtDatumRodjenja= new JTextField();
-		txtDatumRodjenja.setPreferredSize(dim);
-		txtAdresaStanovanja= new JTextField();
-		txtAdresaStanovanja.setPreferredSize(dim);
-		txtBrojTelefona= new JTextField();
-		txtBrojTelefona.setPreferredSize(dim);
-		txtEmail= new JTextField();
-		txtEmail.setPreferredSize(dim);
-		txtAdresaKancelarije= new JTextField();
-		txtAdresaStanovanja.setPreferredSize(dim);
-		txtBrojLicneKarte= new JTextField();
-		txtBrojLicneKarte.setPreferredSize(dim);
-		txtTitula= new JTextField();
-		txtTitula.setPreferredSize(dim);
-		txtZvanje= new JTextField();
-		txtZvanje.setPreferredSize(dim);
-
-		
-		
-		JPanel levo= new JPanel();
+		Dimension d = new Dimension(200,30);
+		txtSifraPred = new JTextField();
+		txtSifraPred.setPreferredSize(d);
+		txtNazivPred = new JTextField();
+		txtNazivPred.setPreferredSize(d);
+		cmbSemestar = new JComboBox<String>();
+		cmbSemestar.setPreferredSize(d);
+		cmbTrGodStud = new JComboBox<String>();
+		cmbTrGodStud.setPreferredSize(d);
+		txtProfesor = new JTextField();
+		txtProfesor.setPreferredSize(d);
+		txtESPB = new JTextField();
+		txtESPB.setPreferredSize(d);
+		JPanel levo = new JPanel();
+		JPanel desno = new JPanel();
 		levo.setLayout(new BoxLayout(levo,BoxLayout.Y_AXIS));
-		levo.add(lblIme);
+		desno.setLayout(new BoxLayout(desno, BoxLayout.Y_AXIS));
+	
+		levo.add(labelaSifraPred);
 		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblPrezime);
+		levo.add(labelaNazivPred);
 		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblDatumRodjenja);
+		levo.add(labelaSemestar);
 		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblAdresaStanovanja);
+		levo.add(labelaGodStud);
 		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblBrojTelefona);
+		levo.add(labelaProfesor);
 		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblEmail);
-		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblAdresaKancelarije);
-		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblBrojLicneKarte);
-		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblTitula);
-		levo.add(Box.createVerticalStrut(10));
-		levo.add(lblZvanje);
+		levo.add(labelaESPB);
 		levo.add(Box.createVerticalStrut(10));
 		levo.add(btnPotvrdi);
 		levo.add(Box.createVerticalStrut(10));
-
+		System.out.println("test");
 		
-
-
-		
-		JPanel desno= new JPanel();
-		desno.setLayout(new BoxLayout(desno,BoxLayout.Y_AXIS));
-		
-		desno.add(txtIme);
+		desno.add(txtSifraPred);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtPrezime);
+		desno.add(txtNazivPred);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtDatumRodjenja);
+		desno.add(cmbSemestar);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtAdresaStanovanja);
+		desno.add(cmbTrGodStud);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtBrojTelefona);
+		desno.add(txtProfesor);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtEmail);
-		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtAdresaKancelarije);
-		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtBrojLicneKarte);
-		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtTitula);
-		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtZvanje);
+		desno.add(txtESPB);
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(btnOdustani);
-		desno.add(Box.createVerticalStrut(10));
+	
 		
+		cmbSemestar.addItem("Letnji");
+		cmbSemestar.addItem("Zimski");
+		
+		cmbTrGodStud.addItem("I(Prva)");
+		cmbTrGodStud.addItem("II(Druga)");
+		cmbTrGodStud.addItem("III(Treca)");
+		cmbTrGodStud.addItem("IV(Cetvrta)");
+		
+		JPanel pnlPolozili = new JPanel();
+		JPanel pnlPali = new JPanel();
+		pnlPolozili.setLayout(new BorderLayout());
+		pnlPali.setLayout(new BorderLayout());
+		
+		Object[] pred = {"Sifra predmeta","Naziv predmeta","ESPB","Ocena","Datum"};
+		
+		tmPolozili = new DefaultTableModel(pred,0);
+		tmPali = new DefaultTableModel(pred,0);
+		
+		tablePolozili = new JTable(tmPolozili);
+		tablePali = new JTable(tmPali);
+		
+		JScrollPane scrollPalozili = new JScrollPane(tablePolozili);
+		JScrollPane scrollPali = new JScrollPane(tablePali);
+		
+		pnlPolozili.add(scrollPalozili,BorderLayout.CENTER);
+		pnlPali.add(scrollPali,BorderLayout.CENTER);
 		mainPanel.add(levo);
 		mainPanel.add(desno);
+		tabs= new JTabbedPane();
+		tabs.add("Informacije",mainPanel);
+		tabs.add("Polozeni",pnlPolozili);
+		tabs.add("Pali",pnlPali);
+		
+		add(tabs,BorderLayout.CENTER);
+		
 		
 	}
+	
+	
+	
 
-	public JTextField getTxtIme() {
-		return txtIme;
+	public JTextField getTxtSifraPred() {
+		return txtSifraPred;
 	}
 
-	public void setTxtIme(JTextField txtIme) {
-		this.txtIme = txtIme;
+
+
+
+	public void setTxtSifraPred(JTextField txtSifraPred) {
+		this.txtSifraPred = txtSifraPred;
 	}
 
-	public JTextField getTxtPrezime() {
-		return txtPrezime;
+
+
+
+	public JTextField getTxtNazivPred() {
+		return txtNazivPred;
 	}
 
-	public void setTxtPrezime(JTextField txtPrezime) {
-		this.txtPrezime = txtPrezime;
+
+
+
+	public void setTxtNazivPred(JTextField txtNazivPred) {
+		this.txtNazivPred = txtNazivPred;
 	}
 
-	public JTextField getTxtDatumRodjenja() {
-		return txtDatumRodjenja;
+
+
+
+	public JComboBox<String> getCmbSemestar() {
+		return cmbSemestar;
 	}
 
-	public void setTxtDatumRodjenja(JTextField txtDatumRodjenja) {
-		this.txtDatumRodjenja = txtDatumRodjenja;
+
+
+
+	public void setCmbSemestar(JComboBox<String> cmbSemestar) {
+		this.cmbSemestar = cmbSemestar;
 	}
 
-	public JTextField getTxtAdresaStanovanja() {
-		return txtAdresaStanovanja;
+
+
+
+	public JTextField getTxtProfesor() {
+		return txtProfesor;
 	}
 
-	public void setTxtAdresaStanovanja(JTextField txtAdresaStanovanja) {
-		this.txtAdresaStanovanja = txtAdresaStanovanja;
+
+
+
+	public void setTxtProfesor(JTextField txtProfesor) {
+		this.txtProfesor = txtProfesor;
 	}
 
-	public JTextField getTxtBrojTelefona() {
-		return txtBrojTelefona;
+
+
+
+	public JTextField getTxtESPB() {
+		return txtESPB;
 	}
 
-	public void setTxtBrojTelefona(JTextField txtBrojTelefona) {
-		this.txtBrojTelefona = txtBrojTelefona;
+
+
+
+	public void setTxtESPB(JTextField txtESPB) {
+		this.txtESPB = txtESPB;
 	}
 
-	public JTextField getTxtEmail() {
-		return txtEmail;
+
+	public JComboBox<String> getCmbTrGodStud() {
+		return cmbTrGodStud;
 	}
 
-	public void setTxtEmail(JTextField txtEmail) {
-		this.txtEmail = txtEmail;
+
+
+
+	public void setCmbTrGodStud(JComboBox<String> cmbTrGodStud) {
+		this.cmbTrGodStud = cmbTrGodStud;
 	}
 
-	public JTextField getTxtAdresaKancelarije() {
-		return txtAdresaKancelarije;
+
+
+
+
+
+
+	public JLabel getLabelaSifraPred() {
+		return labelaSifraPred;
 	}
 
-	public void setTxtAdresaKancelarije(JTextField txtAdresaKancelarije) {
-		this.txtAdresaKancelarije = txtAdresaKancelarije;
+
+
+
+	public void setLabelaSifraPred(JLabel labelaSifraPred) {
+		this.labelaSifraPred = labelaSifraPred;
 	}
 
-	public JTextField getTxtBrojLicneKarte() {
-		return txtBrojLicneKarte;
+
+
+
+	public JLabel getLabelaNazivPred() {
+		return labelaNazivPred;
 	}
 
-	public void setTxtBrojLicneKarte(JTextField txtBrojLicneKarte) {
-		this.txtBrojLicneKarte = txtBrojLicneKarte;
+
+
+
+	public void setLabelaNazivPred(JLabel labelaNazivPred) {
+		this.labelaNazivPred = labelaNazivPred;
 	}
 
-	public JTextField getTxtTitula() {
-		return txtTitula;
+
+
+
+	public JLabel getLabelaSemestar() {
+		return labelaSemestar;
 	}
 
-	public void setTxtTitula(JTextField txtTitula) {
-		this.txtTitula = txtTitula;
+
+
+
+	public void setLabelaSemestar(JLabel labelaSemestar) {
+		this.labelaSemestar = labelaSemestar;
 	}
 
-	public JTextField getTxtZvanje() {
-		return txtZvanje;
+
+
+
+	public JLabel getLabelaGodStud() {
+		return labelaGodStud;
 	}
 
-	public void setTxtZvanje(JTextField txtZvanje) {
-		this.txtZvanje = txtZvanje;
+
+
+
+	public void setLabelaGodStud(JLabel labelaGodStud) {
+		this.labelaGodStud = labelaGodStud;
 	}
 
-	public JLabel getLblIme() {
-		return lblIme;
+
+
+
+	public JLabel getLabelaProfesor() {
+		return labelaProfesor;
 	}
 
-	public void setLblIme(JLabel lblIme) {
-		this.lblIme = lblIme;
+
+
+
+	public void setLabelaProfesor(JLabel labelaProfesor) {
+		this.labelaProfesor = labelaProfesor;
 	}
 
-	public JLabel getLblPrezime() {
-		return lblPrezime;
+
+
+
+	public JLabel getLabelaESPB() {
+		return labelaESPB;
 	}
 
-	public void setLblPrezime(JLabel lblPrezime) {
-		this.lblPrezime = lblPrezime;
+
+
+
+	public void setLabelaESPB(JLabel labelaESPB) {
+		this.labelaESPB = labelaESPB;
 	}
 
-	public JLabel getLblDatumRodjenja() {
-		return lblDatumRodjenja;
+
+
+	public JLabel getLabelaGodUpisa() {
+		return labelaGodUpisa;
 	}
 
-	public void setLblDatumRodjenja(JLabel lblDatumRodjenja) {
-		this.lblDatumRodjenja = lblDatumRodjenja;
+
+
+
+	public void setLabelaGodUpisa(JLabel labelaGodUpisa) {
+		this.labelaGodUpisa = labelaGodUpisa;
 	}
 
-	public JLabel getLblAdresaStanovanja() {
-		return lblAdresaStanovanja;
+
+
+
+	public JLabel getLabelaTrGodStud() {
+		return labelaTrGodStud;
 	}
 
-	public void setLblAdresaStanovanja(JLabel lblAdresaStanovanja) {
-		this.lblAdresaStanovanja = lblAdresaStanovanja;
+
+
+
+	public void setLabelaTrGodStud(JLabel labelaTrGodStud) {
+		this.labelaTrGodStud = labelaTrGodStud;
 	}
 
-	public JLabel getLblBrojTelefona() {
-		return lblBrojTelefona;
+
+
+
+
+
+
+	public JLabel getLabelaPolozili() {
+		return labelaPolozili;
 	}
 
-	public void setLblBrojTelefona(JLabel lblBrojTelefona) {
-		this.lblBrojTelefona = lblBrojTelefona;
+
+
+
+	public void setLabelaPolozili(JLabel labelaPolozili) {
+		this.labelaPolozili = labelaPolozili;
 	}
 
-	public JLabel getLblEmail() {
-		return lblEmail;
+
+
+
+	public JLabel getLabelaPali() {
+		return labelaPali;
 	}
 
-	public void setLblEmail(JLabel lblEmail) {
-		this.lblEmail = lblEmail;
+
+
+
+	public void setLabelaPali(JLabel labelaPali) {
+		this.labelaPali = labelaPali;
 	}
 
-	public JLabel getLblAdresaKancelarije() {
-		return lblAdresaKancelarije;
-	}
 
-	public void setLblAdresaKancelarije(JLabel lblAdresaKancelarije) {
-		this.lblAdresaKancelarije = lblAdresaKancelarije;
-	}
 
-	public JLabel getLblBrojLicneKarte() {
-		return lblBrojLicneKarte;
-	}
-
-	public void setLblBrojLicneKarte(JLabel lblBrojLicneKarte) {
-		this.lblBrojLicneKarte = lblBrojLicneKarte;
-	}
-
-	public JLabel getLblTitula() {
-		return lblTitula;
-	}
-
-	public void setLblTitula(JLabel lblTitula) {
-		this.lblTitula = lblTitula;
-	}
-
-	public JLabel getLblZvanje() {
-		return lblZvanje;
-	}
-
-	public void setLblZvanje(JLabel lblZvanje) {
-		this.lblZvanje = lblZvanje;
-	}
 
 	public JButton getBtnPotvrdi() {
 		return btnPotvrdi;
 	}
 
+
+
+
 	public void setBtnPotvrdi(JButton btnPotvrdi) {
 		this.btnPotvrdi = btnPotvrdi;
 	}
+
+
+
 
 	public JButton getBtnOdustani() {
 		return btnOdustani;
 	}
 
+
+
+
 	public void setBtnOdustani(JButton btnOdustani) {
 		this.btnOdustani = btnOdustani;
 	}
-	
-	
 
+
+
+
+	public DefaultTableModel getTmPolozili() {
+		return tmPolozili;
+	}
+
+
+
+
+	public void setTmPolozili(DefaultTableModel tmPolozili) {
+		this.tmPolozili = tmPolozili;
+	}
+
+
+
+
+	public DefaultTableModel getTmPali() {
+		return tmPali;
+	}
+
+
+
+
+	public void setTmPali(DefaultTableModel tmPali) {
+		this.tmPali = tmPali;
+	}
+
+
+
+
+	public JTable getTablePolozili() {
+		return tablePolozili;
+	}
+
+
+
+
+	public void setTablePolozili(JTable tablePolozili) {
+		this.tablePolozili = tablePolozili;
+	}
+
+
+
+
+	public JTable getTablePali() {
+		return tablePali;
+	}
+
+
+
+
+	public void setTablePali(JTable tablePali) {
+		this.tablePali = tablePali;
+	}
+
+
+
+
+	public JTabbedPane getTabs() {
+		return tabs;
+	}
+
+
+
+
+	public void setTabs(JTabbedPane tabs) {
+		this.tabs = tabs;
+	}
+
+
+
+
+	public static EditPredmetWindow getInstance() 
+	{
+		if(instance==null) 
+		{
+			instance=new EditPredmetWindow();
+		}
+		return instance;
+	}
+	
+	
 }
