@@ -1,11 +1,16 @@
 package Model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import Enums.Semestar;
 import Enums.TrenutnaGodina;
 
-public class Predmet {
+public class Predmet implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2613700171563049232L;
 	private String sifraPr;
 	private String NazivPr;
 	private Semestar semestar;
