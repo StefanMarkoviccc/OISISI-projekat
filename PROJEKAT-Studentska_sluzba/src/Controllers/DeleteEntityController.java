@@ -20,7 +20,7 @@ public class DeleteEntityController extends AbstractAction
 		int tabbedIndex=MainWindow.getInstance().getWorkSpace().getTabs().getSelectedIndex();
 		if(tabbedIndex==0) 
 		{
-
+			MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
 		}
 		else if(tabbedIndex==1) 
 		{

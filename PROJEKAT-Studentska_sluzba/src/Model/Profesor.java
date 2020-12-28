@@ -1,9 +1,14 @@
 package Model;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Profesor  {
+public class Profesor implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8041530947174461576L;
 	private String prezime;
 	private String ime;
 	private LocalDateTime datumR;
