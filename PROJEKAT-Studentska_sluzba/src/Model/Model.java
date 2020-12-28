@@ -18,7 +18,7 @@ public class Model implements Serializable {
 	{
 		for(int i=0;i<studenti.size();i++) 
 		{
-			if(studenti.get(i).getBrIndexa()==s.getBrIndexa()) 
+			if(studenti.get(i).getBrIndexa().equals(s.getBrIndexa()))
 			{
 				return false;
 			}
@@ -31,7 +31,7 @@ public class Model implements Serializable {
 	{
 		for(int i=0;i<studenti.size();i++) 
 		{
-			if(studenti.get(i).getBrIndexa()==index) 
+			if(studenti.get(i).getBrIndexa().equals(index)) 
 			{
 				return studenti.get(i);	
 			}
@@ -152,7 +152,7 @@ public class Model implements Serializable {
 	{
 		for(int i=0;i<profesori.size();i++) 
 		{
-			if(profesori.get(i).getBrLK()==BrLk) 
+			if(profesori.get(i).getBrLK().equals(BrLk)) 
 			{
 				return profesori.get(i);
 				

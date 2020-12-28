@@ -44,7 +44,11 @@ public class EditEntityControler extends AbstractAction {
 			int row=MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
 			Predmet pred=MainWindow.getInstance().getModel().getPredmeti().get(row);
 			
-			
+			EditPredmetWindow.getInstance().getTxtSifraPred().setText(pred.getSifraPr());
+			EditPredmetWindow.getInstance().getTxtESPB().setText(String.valueOf(pred.getEspb()));
+			EditPredmetWindow.getInstance().getTxtNazivPred().setText(pred.getNazivPr());
+			EditPredmetWindow.getInstance().getTxtProfesor().setText(pred.getProfesor().getBrLK());
+			EditPredmetWindow.getInstance().show();
 			
 			
 			

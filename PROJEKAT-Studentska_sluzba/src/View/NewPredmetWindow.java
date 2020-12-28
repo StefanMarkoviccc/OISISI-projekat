@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import Controllers.AddPredmetController;
 import Controllers.ButtonOdustaniControllerProf;
 import Model.Student;
 
@@ -65,7 +66,7 @@ public class NewPredmetWindow extends JFrame {
 		labelaESPB = new JLabel("Broj ESPB bodova");
 		labelaPolozili = new JLabel("Spisak stud koji su polozili");
 		labelaPali = new JLabel("Spisak stud koji su pali");
-		btnPotvrdi = new JButton("Potvrdi");
+		btnPotvrdi = new JButton(new AddPredmetController());
 		btnOdustani = new JButton(new ButtonOdustaniControllerProf());
 		
 		Dimension d = new Dimension(200,30);
