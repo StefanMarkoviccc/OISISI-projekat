@@ -18,7 +18,7 @@ public class AddPredmetController extends AbstractAction {
 			
 		String sifraPred=NewPredmetWindow.getInstance().getTxtSifraPred().getText();
 		String nazivPred=NewPredmetWindow.getInstance().getTxtSifraPred().getText();
-		String  brLik=NewPredmetWindow.getInstance().getTxtSifraPred().getText(); 	
+		String  brLik=NewPredmetWindow.getInstance().getTxtProfesor().getText(); 	
 		int ESPB=Integer.parseInt(NewPredmetWindow.getInstance().getTxtESPB().getText());
 		
 		String  godStud=(String) NewPredmetWindow.getInstance().getCmbTrGodStud().getSelectedItem();
@@ -47,6 +47,7 @@ public class AddPredmetController extends AbstractAction {
 		}else {
 			sem = Semestar.zimski;
 		}
+		System.out.println("LICNA"+brLik);
 		Profesor predmetniProfesor=MainWindow.getInstance().getModel().findProfesor(brLik);
 		Predmet p = new Predmet(sifraPred,nazivPred,sem,trGod,predmetniProfesor,ESPB);
 		MainWindow.getInstance().getModel().addPredmet(p);

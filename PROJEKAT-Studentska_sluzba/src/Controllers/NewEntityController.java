@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 import View.MainWindow;
+import View.NewPredmetWindow;
 import View.NewProfesorWindow;
 import View.NewStudentWindow;
 
@@ -29,7 +30,7 @@ public class NewEntityController extends AbstractAction
 		}
 		else 
 		{
-			
+			NewPredmetWindow.getInstance().show();
 			
 		}
 		

@@ -19,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 import Controllers.ButtonOdustaniControllerProf;
 import Controllers.ButtonPotvrdiControllerProf;
+import Controllers.PotvrdiIzmenuPredmeta;
 
 public class EditPredmetWindow extends JFrame
 {
@@ -65,7 +66,7 @@ public class EditPredmetWindow extends JFrame
 		labelaESPB = new JLabel("Broj ESPB bodova");
 		labelaPolozili = new JLabel("Spisak stud koji su polozili");
 		labelaPali = new JLabel("Spisak stud koji su pali");
-		btnPotvrdi = new JButton("Potvrdi");
+		btnPotvrdi = new JButton(new PotvrdiIzmenuPredmeta());
 		btnOdustani = new JButton(new ButtonOdustaniControllerProf());
 		
 		Dimension d = new Dimension(200,30);
