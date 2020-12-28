@@ -3,6 +3,8 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -14,6 +16,7 @@ import javax.swing.JTextField;
 
 import Controllers.ButtonOdustaniControllerProf;
 import Controllers.ButtonPotvrdiControllerProf;
+import Controllers.PotvrdiIzmenuProfesora;
 
 public class EditProfesorWindow extends JFrame{
 	
@@ -42,14 +45,14 @@ public class EditProfesorWindow extends JFrame{
 	
 	private JButton btnPotvrdi;
 	private JButton btnOdustani;
-	private static NewProfesorWindow instance;
+	private static EditProfesorWindow instance;
 	
-	public static NewProfesorWindow getInstance() 
+	public static EditProfesorWindow getInstance() 
 	{
 		if(instance==null) 
 		{
 			
-			instance=new NewProfesorWindow();
+			instance=new EditProfesorWindow();
 		}
 		return instance;
 		
@@ -75,8 +78,17 @@ public class EditProfesorWindow extends JFrame{
 		lblBrojLicneKarte= new JLabel("Broj Licne Karte");
 		lblTitula= new JLabel("Titula");
 		lblZvanje= new JLabel("Zvanje");
-		btnPotvrdi= new JButton(new ButtonPotvrdiControllerProf());
-		btnOdustani= new JButton(new ButtonOdustaniControllerProf());
+		btnPotvrdi= new JButton(new PotvrdiIzmenuProfesora());
+		btnOdustani= new JButton("Odustani");
+		
+		btnOdustani.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				EditProfesorWindow.getInstance().dispose();
+				
+			}
+		});
 	
 		
 		txtIme= new JTextField();

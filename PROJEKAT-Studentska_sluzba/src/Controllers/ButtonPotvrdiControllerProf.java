@@ -30,7 +30,6 @@ public class ButtonPotvrdiControllerProf extends AbstractAction {
 		String titulaProf=NewProfesorWindow.getInstance().getTxtTitula().getText();
 		String mail=NewProfesorWindow.getInstance().getTxtEmail().getText();
 		String brojLK=NewProfesorWindow.getInstance().getTxtBrojLicneKarte().getText();
-		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate d=LocalDate.parse(dR,formatter);
 		LocalDateTime date=LocalDateTime.of(d, LocalDateTime.now().toLocalTime());

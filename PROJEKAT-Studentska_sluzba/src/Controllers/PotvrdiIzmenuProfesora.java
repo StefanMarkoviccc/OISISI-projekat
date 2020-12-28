@@ -56,6 +56,7 @@ public class PotvrdiIzmenuProfesora extends AbstractAction {
     EditProfesorWindow.getInstance().dispose();
     MainWindow.getInstance().getWorkSpace().getTmProfesori().setRowCount(0);
     WorkSpace.insertTableProfesor();
+    
 	}
 
 }
