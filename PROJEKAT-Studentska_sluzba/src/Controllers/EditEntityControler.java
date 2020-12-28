@@ -39,12 +39,15 @@ public class EditEntityControler extends AbstractAction {
 		}
 		else if(indx==2) 
 		{
+			int row=MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
+			Predmet pred=MainWindow.getInstance().getModel().getPredmeti().get(row);
+			
+			
 			
 			
 		}else{
 			int row = MainWindow.getInstance().getWorkSpace().getTableProfesori().getSelectedRow();
 			Profesor prof = MainWindow.getInstance().getModel().getProfesori().get(row);
-			
 			EditProfesorWindow.getInstance().getTxtIme().setText(prof.getIme());
 			EditProfesorWindow.getInstance().getTxtPrezime().setText(prof.getPrezime());
 			EditProfesorWindow.getInstance().getTxtDatumRodjenja().setText(prof.getDatumR().toString());
