@@ -6,9 +6,6 @@ import java.util.ArrayList;
 public class Model implements Serializable {
 
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3369442398138935746L;
 	private ArrayList<Student> studenti;
 	private ArrayList<Ocena> ocene;
