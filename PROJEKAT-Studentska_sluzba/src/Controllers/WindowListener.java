@@ -17,7 +17,7 @@ public class WindowListener extends WindowAdapter
 		WorkSpace.insertTableStudent();
 		WorkSpace.insertTablePredmet();
 		WorkSpace.insertTableProfesor();
-
+		
 	}
 	
 	public void windowClosing(WindowEvent e) 
