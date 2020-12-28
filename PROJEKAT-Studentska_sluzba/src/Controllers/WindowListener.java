@@ -13,12 +13,12 @@ public class WindowListener extends WindowAdapter
 	
 	public void windowOpened(WindowEvent e) 
 	{
-		DataSaveClass.Deserijalizacija("..\\resources\\modelData.ss");
+		DataSaveClass.Deserijalizacija( "..\\resources\\modelData.ss");
 		WorkSpace.insertTableStudent();
 		WorkSpace.insertTablePredmet();
 		WorkSpace.insertTableProfesor();
-	}
 
+	}
 	
 	public void windowClosing(WindowEvent e) 
 	{

@@ -22,8 +22,8 @@ public class Model implements Serializable {
 			{
 				return false;
 			}
-			studenti.add(s);
 		}
+		studenti.add(s);
 		return true;
 	}
 	
@@ -64,8 +64,8 @@ public class Model implements Serializable {
 			{
 				return false;
 			}
-			ocene.add(o);
 		}
+		ocene.add(o);
 		return true;
 	}
 	
@@ -130,8 +130,8 @@ public class Model implements Serializable {
 			{
 				return false;
 			}
-			profesori.add(p);
 		}
+		profesori.add(p);
 		return true;
 	}
 	
@@ -143,8 +143,8 @@ public class Model implements Serializable {
 			{
 				return false;
 			}
-			predmeti.add(pr);
 		}
+		predmeti.add(pr);
 		return true;
 	}
 	
