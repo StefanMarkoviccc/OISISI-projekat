@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import View.EditProfesorWindow;
 import View.MainWindow;
 
 public class EditEntityControler extends AbstractAction {
@@ -21,6 +22,8 @@ public class EditEntityControler extends AbstractAction {
 		{
 			
 			
+		}else{
+			EditProfesorWindow.getInstance().show();
 		}
 	
 		
