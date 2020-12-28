@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import Model.Predmet;
 import Model.Profesor;
 import Model.Student;
 import View.EditProfesorWindow;

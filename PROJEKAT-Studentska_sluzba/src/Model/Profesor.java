@@ -2,7 +2,7 @@ package Model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Profesor {
+public class Profesor  {
 	
 	private String prezime;
 	private String ime;
