@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import Model.Predmet;
+import Model.Profesor;
 import Model.Student;
 
 public class WorkSpace extends JPanel{
@@ -163,6 +164,15 @@ public class WorkSpace extends JPanel{
 		}
 	}
 	
+	public static void insertTableProfesor() 
+	{
+		for(int i=0; i<MainWindow.getInstance().getModel().getProfesori().size();i++) 
+		{
+			Profesor p = MainWindow.getInstance().getModel().getProfesori().get(i);
+			Object[] data = {p.getIme(),p.getPrezime(),p.getTitula(),p.getZvanje()};
+			MainWindow.getInstance().getWorkSpace().getTmProfesori().addRow(data);
+		}
+	}
 	
 	
 }
