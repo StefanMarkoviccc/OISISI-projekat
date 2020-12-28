@@ -7,6 +7,7 @@ import javax.swing.AbstractAction;
 import Model.Predmet;
 import Model.Profesor;
 import Model.Student;
+import View.EditPredmetWindow;
 import View.EditProfesorWindow;
 import View.EditStudentWindow;
 import View.MainWindow;
@@ -42,6 +43,7 @@ public class EditEntityControler extends AbstractAction {
 		{
 			int row=MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
 			Predmet pred=MainWindow.getInstance().getModel().getPredmeti().get(row);
+			
 			
 			
 			
