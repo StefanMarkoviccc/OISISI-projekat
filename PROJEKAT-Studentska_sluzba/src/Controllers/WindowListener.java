@@ -5,6 +5,7 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 
 import DataSave.DataSaveClass;
+import View.MainWindow;
 import View.WorkSpace;
 
 public class WindowListener extends WindowAdapter 
@@ -12,7 +13,8 @@ public class WindowListener extends WindowAdapter
 	
 	public void windowOpened(WindowEvent e) 
 	{
-		//DataSaveClass.Deserijalizacija( ".\\DataSave\\data.ss");		
+		//DataSaveClass.Deserijalizacija( ".\\DataSave\\data.ss");
+		WorkSpace.insertTableStudent();
 	}
 	
 	public void windowClosing(WindowEvent e) 
