@@ -1,12 +1,17 @@
 package Model;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import Enums.Status;
 import Enums.TrenutnaGodina;
 
-public class Student {
+public class Student implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2721387194851268383L;
 	private String prezime;
 	private String ime;
 	private LocalDateTime datumR;

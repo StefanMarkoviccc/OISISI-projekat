@@ -1,8 +1,13 @@
 package Model;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Ocena {
+public class Ocena implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2591816367003130300L;
 	private Student student;
 	private Predmet predmet;
 	private int ocena;

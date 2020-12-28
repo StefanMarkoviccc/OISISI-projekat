@@ -5,6 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import Controllers.WindowListener;
 import Model.Model;
 
 public class MainWindow extends JFrame {
@@ -35,6 +36,7 @@ public class MainWindow extends JFrame {
 	
 	public MainWindow()
 	{
+		this.addWindowListener(new WindowListener());
 		setPreferredSize(new Dimension(500, 500));
 		pack();
 		setJMenuBar(new MenuBar());
