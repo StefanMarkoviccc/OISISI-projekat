@@ -26,6 +26,11 @@ public class EditEntityControler extends AbstractAction {
 		if(indx==0) 
 		{
 			int row=MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
+			if(row==-1) 
+			{
+				return;
+				
+				}
 			Student stud=MainWindow.getInstance().getModel().getStudenti().get(row);
 			
 			EditStudentWindow.getInstance().getTxtAdresaStan().setText(stud.getAdresaStanovanja());
