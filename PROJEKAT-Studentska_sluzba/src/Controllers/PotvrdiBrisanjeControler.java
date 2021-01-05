@@ -41,6 +41,15 @@ public class PotvrdiBrisanjeControler extends AbstractAction
 			MainWindow.getInstance().getModel().getPredmeti().remove(ind);
 			DeleteEntityWindow.getInstance("").dispose();
 			
+		}else {
+			int ind=MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
+			if(ind==-1) 
+			{
+				return;
+			}
+			MainWindow.getInstance().getWorkSpace().getTmPredmeti().removeRow(ind);
+			MainWindow.getInstance().getModel().getPredmeti().remove(ind);
+			DeleteEntityWindow.getInstance("").dispose();
 		}
 		
 		
