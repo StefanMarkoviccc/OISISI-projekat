@@ -36,7 +36,7 @@ public class DeleteEntityWindow extends JFrame {
 		btnDa = new JButton("Da");
 		btnNe = new JButton("Ne");
 		setTitle("Brisanje" +string);
-		labelaText = new JLabel("Da li ste sigurni da zelite da obrisete"+string+"?");
+		labelaText = new JLabel("Da li ste sigurni da zelite da obrisete " + string + "?");
 		
 		btnNe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
