@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controllers.PotvrdiBrisanjeControler;
+
 public class DeleteEntityWindow extends JFrame {
 	
 	
@@ -33,7 +35,7 @@ public class DeleteEntityWindow extends JFrame {
 		pnlText.setLayout(new BorderLayout());
 		pnlButtons.setLayout(new FlowLayout(new FlowLayout().CENTER));
 		
-		btnDa = new JButton("Da");
+		btnDa = new JButton(new PotvrdiBrisanjeControler());
 		btnNe = new JButton("Ne");
 		setTitle("Brisanje" +string);
 		labelaText = new JLabel("Da li ste sigurni da zelite da obrisete " + str + "?");
