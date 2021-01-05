@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import Controllers.AddStudentController;
+import Controllers.PonistiOcenuController;
 import Controllers.PotvrdiIzmenuStudenta;
 
 public class EditStudentWindow  extends JFrame
@@ -197,7 +198,7 @@ public class EditStudentWindow  extends JFrame
 		Object[] polozeni = {"Sifra predmeta","Naziv predmeta","ESPB","Ocena","Datum"};
 		tmPolozeni = new DefaultTableModel(polozeni,0);
 		tablePolozeni = new JTable(tmPolozeni);
-		JButton btnPonisti = new JButton("Ponisti ocenu");
+		JButton btnPonisti = new JButton(new PonistiOcenuController());
 		JLabel labelaProsecna = new JLabel("Prosecna ocena:");
 		JLabel labelaUkupno = new JLabel("Ukupno ESPB:");
 		
@@ -229,6 +230,7 @@ public class EditStudentWindow  extends JFrame
 		
 		
 		add(tabs,BorderLayout.CENTER);
+		
 	}
 
 	public JTextField getTxtIme() {
