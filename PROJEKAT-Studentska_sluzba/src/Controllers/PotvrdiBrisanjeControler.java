@@ -38,7 +38,7 @@ public class PotvrdiBrisanjeControler extends AbstractAction
 				return;
 			}
 			MainWindow.getInstance().getWorkSpace().getTmProfesori().removeRow(ind);
-			MainWindow.getInstance().getModel().getPredmeti().remove(ind);
+			MainWindow.getInstance().getModel().getProfesori().remove(ind);
 			DeleteEntityWindow.getInstance("").dispose();
 			
 		}else {
