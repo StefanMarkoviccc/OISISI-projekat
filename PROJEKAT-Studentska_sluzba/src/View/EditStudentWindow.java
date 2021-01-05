@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import Controllers.AddStudentController;
 import Controllers.PonistiOcenuController;
 import Controllers.PotvrdiIzmenuStudenta;
+import Controllers.StudentToPredmetController;
 
 public class EditStudentWindow  extends JFrame
 {
@@ -218,7 +219,7 @@ public class EditStudentWindow  extends JFrame
 		
 		JPanel pnlButtons=new JPanel();
 		pnlButtons.setLayout(new FlowLayout(FlowLayout.LEFT));
-		JButton btnDodaj= new JButton("Dodaj");
+		JButton btnDodaj= new JButton(new StudentToPredmetController());
 		JButton btnObrisi= new JButton("Obrisi");
 		JButton btnPolaganje= new JButton("Polaganje");
 		pnlButtons.add(btnDodaj);
