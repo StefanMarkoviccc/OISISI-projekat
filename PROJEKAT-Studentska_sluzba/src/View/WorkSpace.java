@@ -64,6 +64,8 @@ public class WorkSpace extends JPanel{
 		tmPredmeti = new DefaultTableModel(pred,0);
 		tablePredmeti = new JTable(tmPredmeti);
 		
+		
+		tableStudenti.setAutoCreateRowSorter(true);
 		JScrollPane scrollStudenti = new JScrollPane(tableStudenti);
 		JScrollPane scrollProfesori = new JScrollPane(tableProfesori);
 		JScrollPane scrollPredmeti = new JScrollPane(tablePredmeti);
