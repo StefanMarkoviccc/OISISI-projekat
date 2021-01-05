@@ -13,6 +13,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import Controllers.AddStudentController;
@@ -21,6 +22,7 @@ import Controllers.PotvrdiIzmenuStudenta;
 public class EditStudentWindow  extends JFrame
 {
 
+	private JTabbedPane tabs;
 	private JTextField txtIme;
 	private JTextField txtPrezime;
 	private JTextField txtDatumR;
@@ -43,6 +45,8 @@ public class EditStudentWindow  extends JFrame
 	private JLabel labelaNacinFin;
 	private JButton btnPotvrdi;
 	private JButton btnOdustani;
+	
+	
 	private static EditStudentWindow instance;
 	
 	public static EditStudentWindow getInstance() 
@@ -56,13 +60,14 @@ public class EditStudentWindow  extends JFrame
 	
 	public EditStudentWindow () 
 	{
+		tabs= new JTabbedPane();
 		setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(800,600));
 		pack();
 		//mainPanel
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-		add(mainPanel,BorderLayout.CENTER);
+		
 		
 		
 		JPanel left = new JPanel();
@@ -173,7 +178,17 @@ public class EditStudentWindow  extends JFrame
 
 		mainPanel.add(left);
 		mainPanel.add(right);
-			
+		JPanel pnlPolozeni= new JPanel();
+		
+		
+		
+		
+		
+		tabs.add("Informacije",mainPanel);
+		tabs.add("Polozeni",pnlPolozeni);
+		
+		
+		add(tabs,BorderLayout.CENTER);
 	}
 
 	public JTextField getTxtIme() {
