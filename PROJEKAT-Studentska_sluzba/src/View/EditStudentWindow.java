@@ -13,8 +13,11 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 import Controllers.AddStudentController;
 import Controllers.PotvrdiIzmenuStudenta;
@@ -45,6 +48,8 @@ public class EditStudentWindow  extends JFrame
 	private JLabel labelaNacinFin;
 	private JButton btnPotvrdi;
 	private JButton btnOdustani;
+	private JTable tablePolozeni;
+	private DefaultTableModel tmPolozeni;
 	
 	
 	private static EditStudentWindow instance;
@@ -178,7 +183,42 @@ public class EditStudentWindow  extends JFrame
 
 		mainPanel.add(left);
 		mainPanel.add(right);
+		JPanel pnlBlank = new JPanel();
+		pnlBlank.setLayout(new BorderLayout());
 		JPanel pnlPolozeni= new JPanel();
+		pnlPolozeni.setLayout(new BorderLayout());
+		JPanel pnlButton = new JPanel();
+		pnlButton.setLayout(new FlowLayout(FlowLayout.LEFT));
+		JPanel pnlTable = new JPanel();
+		pnlTable.setLayout(new BorderLayout());
+		JPanel pnlText = new JPanel();
+		pnlText.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		
+		Object[] polozeni = {"Sifra predmeta","Naziv predmeta","ESPB","Ocena","Datum"};
+		tmPolozeni = new DefaultTableModel(polozeni,0);
+		tablePolozeni = new JTable(tmPolozeni);
+		JButton btnPonisti = new JButton("Ponisti ocenu");
+		JLabel labelaProsecna = new JLabel("Prosecna ocena:");
+		JLabel labelaUkupno = new JLabel("Ukupno ESPB:");
+		
+		JScrollPane scrollPolozeni = new JScrollPane(tablePolozeni);
+		
+		pnlPolozeni.add(pnlButton);
+		pnlPolozeni.add(pnlText);
+		pnlPolozeni.add(pnlTable);
+		pnlPolozeni.add(pnlBlank,BorderLayout.SOUTH);
+		
+		pnlButton.add(btnPonisti);
+		pnlBlank.setLayout(new BoxLayout(pnlBlank, BoxLayout.Y_AXIS));
+		pnlBlank.add(labelaUkupno);
+		pnlBlank.add(labelaProsecna);
+		pnlText.add(pnlBlank);
+		
+		
+		
+		pnlPolozeni.add(pnlText,BorderLayout.SOUTH);
+		pnlPolozeni.add(pnlButton,BorderLayout.NORTH);
+		pnlPolozeni.add(scrollPolozeni,BorderLayout.CENTER);
 		
 		
 		
