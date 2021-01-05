@@ -35,6 +35,7 @@ public class StudentToPredmetWindow extends JFrame
 	
 	public StudentToPredmetWindow() 
 	{
+		setTitle("Predmeti");
 		setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(300,200));
 		pack();
