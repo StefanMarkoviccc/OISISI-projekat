@@ -51,6 +51,8 @@ public class EditStudentWindow  extends JFrame
 	private JButton btnOdustani;
 	private JTable tablePolozeni;
 	private DefaultTableModel tmPolozeni;
+	private JTable tableNepolozeni;
+	private DefaultTableModel tmNepolozeni;
 	
 	
 	private static EditStudentWindow instance;
@@ -204,6 +206,30 @@ public class EditStudentWindow  extends JFrame
 		
 		JScrollPane scrollPolozeni = new JScrollPane(tablePolozeni);
 		
+		
+		Object[] nepolozeni={"Sifra predmeta","Naziv predmeta","ESPB","Ocena","Datum"};
+		tmNepolozeni= new DefaultTableModel(nepolozeni,0);
+		tableNepolozeni= new JTable(tmNepolozeni);
+		JScrollPane scrollNepolozeni= new JScrollPane(tableNepolozeni);
+		
+		
+		JPanel pnlNepolozeni=new JPanel();
+		pnlNepolozeni.setLayout(new BorderLayout());
+		
+		JPanel pnlButtons=new JPanel();
+		pnlButtons.setLayout(new FlowLayout(FlowLayout.LEFT));
+		JButton btnDodaj= new JButton("Dodaj");
+		JButton btnObrisi= new JButton("Obrisi");
+		JButton btnPolaganje= new JButton("Polaganje");
+		pnlButtons.add(btnDodaj);
+		pnlButtons.add(btnObrisi);
+		pnlButtons.add(btnPolaganje);
+		JPanel pnlTableNepolozeni= new JPanel();
+		pnlTableNepolozeni.setLayout(new BorderLayout());
+		pnlTableNepolozeni.add(scrollNepolozeni,BorderLayout.CENTER);
+		pnlNepolozeni.add(pnlButtons,BorderLayout.NORTH);
+		pnlNepolozeni.add(pnlTableNepolozeni,BorderLayout.CENTER);
+		
 		pnlPolozeni.add(pnlButton);
 		pnlPolozeni.add(pnlText);
 		pnlPolozeni.add(pnlTable);
@@ -227,6 +253,7 @@ public class EditStudentWindow  extends JFrame
 		
 		tabs.add("Informacije",mainPanel);
 		tabs.add("Polozeni",pnlPolozeni);
+		tabs.add("Nepolozeni",pnlNepolozeni);
 		
 		
 		add(tabs,BorderLayout.CENTER);
