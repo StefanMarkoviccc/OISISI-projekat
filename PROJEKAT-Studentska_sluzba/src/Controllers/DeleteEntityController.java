@@ -32,7 +32,7 @@ public class DeleteEntityController extends AbstractAction
 			int index=MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
 			if(index!=-1) 
 			{
-				MainWindow.getInstance().getWorkSpace().getTmPredmeti().removeRow(index);
+				DeleteEntityWindow.getInstance("predmeta").show();
 			}
 			
 		}
