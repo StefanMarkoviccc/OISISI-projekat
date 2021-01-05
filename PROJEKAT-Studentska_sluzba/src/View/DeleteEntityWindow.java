@@ -19,24 +19,24 @@ public class DeleteEntityWindow extends JFrame {
 	public JButton btnDa;
 	public JButton btnNe; 	
 	public static DeleteEntityWindow instance;
-	
+	public String str;
 	
 	public DeleteEntityWindow(String string) 
 	{
+		str=string;
 		setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(300,200));
 		pack();
 		JPanel pnlPonisti = new JPanel();
 		JPanel pnlText = new JPanel();
 		JPanel pnlButtons = new JPanel();
-		
 		pnlText.setLayout(new BorderLayout());
 		pnlButtons.setLayout(new FlowLayout(new FlowLayout().CENTER));
 		
 		btnDa = new JButton("Da");
 		btnNe = new JButton("Ne");
 		setTitle("Brisanje" +string);
-		labelaText = new JLabel("Da li ste sigurni da zelite da obrisete " + string + "?");
+		labelaText = new JLabel("Da li ste sigurni da zelite da obrisete " + str + "?");
 		
 		btnNe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -66,6 +66,7 @@ public class DeleteEntityWindow extends JFrame {
 		{
 			instance=new DeleteEntityWindow(str);
 		}	
+		instance.str=str;
 		return instance;
 	}
 	
