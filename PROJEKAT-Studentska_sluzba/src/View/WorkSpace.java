@@ -66,6 +66,8 @@ public class WorkSpace extends JPanel{
 		
 		
 		tableStudenti.setAutoCreateRowSorter(true);
+		tableProfesori.setAutoCreateRowSorter(true);
+
 		JScrollPane scrollStudenti = new JScrollPane(tableStudenti);
 		JScrollPane scrollProfesori = new JScrollPane(tableProfesori);
 		JScrollPane scrollPredmeti = new JScrollPane(tablePredmeti);
