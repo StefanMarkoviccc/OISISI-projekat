@@ -25,7 +25,6 @@ public class DeleteEntityController extends AbstractAction
 			if(index!=-1) 
 			{
 				DeleteEntityWindow.getInstance("studenta").show();
-				
 			}
 		}
 		else if(tabbedIndex==1) 
