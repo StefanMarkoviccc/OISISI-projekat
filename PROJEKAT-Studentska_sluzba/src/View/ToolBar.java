@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Controllers.DeleteEntityController;
 import Controllers.EditEntityControler;
 import Controllers.NewEntityController;
 
@@ -36,7 +37,7 @@ public class ToolBar extends JPanel {
 		btnAdd = new JButton(new NewEntityController());
 		btnAdd.setText("+");
 		btnEdit = new JButton(new EditEntityControler());
-		btnDelete = new JButton("Delete");
+		btnDelete = new JButton(new DeleteEntityController());
 		btnSearch = new JButton("Search");
 		txtSearch = new JTextField();
 		txtSearch.setPreferredSize(new Dimension(200,28));

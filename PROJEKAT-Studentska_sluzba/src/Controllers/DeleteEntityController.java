@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import View.DeleteEntityWindow;
 import View.MainWindow;
 
 public class DeleteEntityController extends AbstractAction 
@@ -20,7 +21,7 @@ public class DeleteEntityController extends AbstractAction
 		int tabbedIndex=MainWindow.getInstance().getWorkSpace().getTabs().getSelectedIndex();
 		if(tabbedIndex==0) 
 		{
-			MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
+			DeleteEntityWindow.getInstance("student").show();
 		}
 		else if(tabbedIndex==1) 
 		{
