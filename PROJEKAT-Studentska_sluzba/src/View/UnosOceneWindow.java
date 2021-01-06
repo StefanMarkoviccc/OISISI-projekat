@@ -24,7 +24,7 @@ public class UnosOceneWindow extends JFrame {
 	public JLabel labelaDatum;
 	public JTextField txtSifra;
 	public JTextField txtNaziv;
-	public JComboBox<Ocena> cmbOcena;
+	public JComboBox<String> cmbOcena;
 	public JTextField txtDatum;
 	public JButton btnPotvrdi;
 	public JButton btnOdustani;
@@ -46,13 +46,21 @@ public class UnosOceneWindow extends JFrame {
 		txtSifra.setEditable(false);
 		JTextField txtNaziv = new JTextField();
 		txtNaziv.setEditable(false);
-		JComboBox<Ocena> cmbOcena = new JComboBox<>();
+		JComboBox<String> cmbOcena = new JComboBox<String>();
+		cmbOcena.addItem("6");
+		cmbOcena.addItem("7");
+		cmbOcena.addItem("8");
+		cmbOcena.addItem("9");
+		cmbOcena.addItem("10");
+		
 		JTextField txtDatum = new JTextField();
 		JButton btnPotvrdi = new JButton("Potvrdi");
 		JButton btnOdustani = new JButton("Odustani");
 		JPanel pnlLevo = new JPanel();
 		JPanel pnlDesno = new JPanel();
 		JPanel pnlDOWN = new JPanel();
+		
+		
 		
 		pnlLevo.setLayout(new BoxLayout(pnlLevo,BoxLayout.Y_AXIS));
 		pnlDesno.setLayout(new BoxLayout(pnlDesno,BoxLayout.Y_AXIS));
