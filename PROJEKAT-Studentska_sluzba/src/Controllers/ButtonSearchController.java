@@ -83,8 +83,11 @@ public class ButtonSearchController extends AbstractAction {
 				
 				
 			}
-		}else if(index == 1) 
-		{
+			
+		insertTableStudent(studentiPretraga);
+		
+		}else if(index == 1) {
+			
 			if(parts.length==1) 
 			{
 				int i=0;
@@ -97,12 +100,25 @@ public class ButtonSearchController extends AbstractAction {
 						profesorPretraga.add(prof);
 					}
 				}
+			}else if(parts.length==2)
+			{
+				String partPrezime=parts[0];
+				String partIme=parts[1];
+				int i=0;
+				for(i=0;i<MainWindow.getInstance().getModel().getProfesori().size();i++) 
+				{
+					Profesor prof = MainWindow.getInstance().getModel().getProfesori().get(i);
+					if(prof.getPrezime().contains(partPrezime) && prof.getIme().contains(partIme)) 
+					{
+						profesorPretraga.add(prof);
+					}
+				}
+				
 			}
 			
+			insertTableProfesor(profesorPretraga);
 		}
 		
-		insertTableStudent(studentiPretraga);
-		insertTableProfesor(profesorPretraga);
 
 		
 		
