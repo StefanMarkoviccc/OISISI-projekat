@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
+import Model.Predmet;
 import Model.Profesor;
 import Model.Student;
 import View.MainWindow;
@@ -28,7 +29,8 @@ public class ButtonSearchController extends AbstractAction {
 
 		ArrayList<Student> studentiPretraga = new ArrayList<Student> ();
 		ArrayList<Profesor> profesorPretraga = new ArrayList<Profesor> ();
-		
+		ArrayList<Predmet> predmetPretraga = new ArrayList<Predmet> ();
+		 
 		if(s.equals(" ")) 
 		{
 			JOptionPane.showMessageDialog(null,"Popunite tekstualno polje pretrage!");
@@ -117,12 +119,19 @@ public class ButtonSearchController extends AbstractAction {
 			}
 			
 			insertTableProfesor(profesorPretraga);
+		}else {
+			int i = 0;
+			String partNazivPred=parts[0];
+			for(i=0;i<MainWindow.getInstance().getModel().getPredmeti().size();i++) 
+			{
+				Predmet pred=MainWindow.getInstance().getModel().getPredmeti().get(i);
+				if(pred.getNazivPr().contains(partNazivPred)) 
+				{
+					predmetPretraga.add(pred);
+				}
+			}
 		}
-		
-
-		
-		
-		
+		insertTablePredmet(predmetPretraga);	
 	}
 	
 	public void insertTableStudent(ArrayList<Student> studneti) 
@@ -148,6 +157,18 @@ public class ButtonSearchController extends AbstractAction {
 			MainWindow.getInstance().getWorkSpace().getTmProfesori().addRow(o);
 		}
 	
+	}
+	
+	public void insertTablePredmet(ArrayList<Predmet> predmeti) 
+	{
+		MainWindow.getInstance().getWorkSpace().getTmPredmeti().setRowCount(0);
+		int i=0;
+		for(i=0;i<predmeti.size();i++) 
+		{
+			Predmet pred = predmeti.get(i);
+			Object[] o = {pred.getSifraPr(),pred.getNazivPr(),pred.getEspb(),pred.getGodStudija(),pred.getSemestar()};
+			MainWindow.getInstance().getWorkSpace().getTmPredmeti().addRow(o);
+		}
 	}
 
 }
