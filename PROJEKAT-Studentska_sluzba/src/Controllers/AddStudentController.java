@@ -67,7 +67,7 @@ public class AddStudentController extends AbstractAction {
 			status=Status.samofinansiranje;
 		}
 		
-		Student s = new Student(ime,prezime,date,adresaStan,brTel,mail,brIndexa,godUpisaInt,trGodStud,status);
+		Student s = new Student(prezime,ime,date,adresaStan,brTel,mail,brIndexa,godUpisaInt,trGodStud,status);
 		MainWindow.getInstance().getModel().addStudenta(s);
 		System.out.println("eee");
 		System.out.println(	MainWindow.getInstance().getModel().getStudenti().size());
