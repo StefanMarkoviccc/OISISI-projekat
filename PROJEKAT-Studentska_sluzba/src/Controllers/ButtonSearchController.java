@@ -108,7 +108,7 @@ public class ButtonSearchController extends AbstractAction {
 				for(i=0;i<MainWindow.getInstance().getModel().getProfesori().size();i++) 
 				{
 					Profesor prof = MainWindow.getInstance().getModel().getProfesori().get(i);
-					if(prof.getPrezime().contains(partPrezime) && prof.getIme().contains(partIme)) 
+					if(prof.getPrezime().toLowerCase().contains(partPrezime) && prof.getIme().toLowerCase().contains(partIme)) 
 					{
 						profesorPretraga.add(prof);
 					}
