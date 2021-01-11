@@ -3,6 +3,8 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -32,6 +34,14 @@ public class PotvrdiPonistavanjeOceneWindow extends JFrame {
 		
 		btnDa = new JButton("Da");
 		btnNe = new JButton("Ne");
+		btnNe.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PotvrdiPonistavanjeOceneWindow.getInstance().dispose();
+				
+			}
+		});
 		labelaText = new JLabel("Da li ste sigurni da zelite da ponistite ocenu?");
 		
 		pnlText.add(labelaText,BorderLayout.CENTER);

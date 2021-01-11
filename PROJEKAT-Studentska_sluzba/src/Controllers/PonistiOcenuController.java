@@ -13,6 +13,8 @@ public class PonistiOcenuController extends AbstractAction {
 
 		PotvrdiPonistavanjeOceneWindow.getInstance().show();
 		
+		
+		
 	}
 	
 	public PonistiOcenuController() 
