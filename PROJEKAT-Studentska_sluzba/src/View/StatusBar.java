@@ -34,7 +34,7 @@ public class StatusBar extends JPanel {
 			{
 				
 				LocalDateTime ldt= LocalDateTime.now();
-				String txt=ldt.toString();
+				String txt=String.valueOf(ldt.getHour())+":"+String.valueOf(ldt.getMinute())+" "+String.valueOf(ldt.getYear())+"-"+String.valueOf(ldt.getMonthValue())+"-"+String.valueOf(ldt.getDayOfMonth());
 				date.setText(txt);
 			}
 			
