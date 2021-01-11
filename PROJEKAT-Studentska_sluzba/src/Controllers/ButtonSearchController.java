@@ -41,7 +41,7 @@ public class ButtonSearchController extends AbstractAction {
 				for(int i=0; i<MainWindow.getInstance().getModel().getStudenti().size();i++) 
 				{
 					Student ss = MainWindow.getInstance().getModel().getStudenti().get(i);
-					if(ss.getPrezime().contains(partPrezime)) 
+					if(ss.getPrezime().toLowerCase().contains(partPrezime.toLowerCase())) 
 					{
 						studentiPretraga.add(ss);
 					}
@@ -58,9 +58,9 @@ public class ButtonSearchController extends AbstractAction {
 	public void insertTableStudent(ArrayList<Student> studneti) 
 	{
 		MainWindow.getInstance().getWorkSpace().getTmStudenti().setRowCount(0);
-		for(int i=0;i<MainWindow.getInstance().getModel().getStudenti().size();i++) 
+		for(int i=0;i<studneti.size();i++) 
 		{
-			Student s = MainWindow.getInstance().getModel().getStudenti().get(i);
+			Student s =studneti.get(i);
 			Object [] o = {s.getBrIndexa(),s.getIme(),s.getPrezime(),s.getGodina(),s.getStatus(),s.getProsecnaOcena()};
 			MainWindow.getInstance().getWorkSpace().getTmStudenti().addRow(o);
 		}
