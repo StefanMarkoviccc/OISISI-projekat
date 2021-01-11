@@ -47,9 +47,44 @@ public class ButtonSearchController extends AbstractAction {
 					}
 				}
 				
-				insertTableStudent(studentiPretraga);
 			}
-		};
+			else if(parts.length==2) 
+			{
+				String partPrezime = parts[0];
+				String partIme= parts[1];
+				
+				for(int i=0; i<MainWindow.getInstance().getModel().getStudenti().size();i++) 
+				{
+					Student ss = MainWindow.getInstance().getModel().getStudenti().get(i);
+					if(ss.getPrezime().toLowerCase().contains(partPrezime.toLowerCase()) && ss.getIme().toLowerCase().contains(partIme.toLowerCase())) 
+					{
+						studentiPretraga.add(ss);
+					}
+				}
+				
+			}
+			else if(parts.length==3) 
+			{
+				String partPrezime = parts[0];
+				String partIme= parts[1];
+				String partIndex=parts[2];
+				
+				for(int i=0; i<MainWindow.getInstance().getModel().getStudenti().size();i++) 
+				{
+					Student ss = MainWindow.getInstance().getModel().getStudenti().get(i);
+					if(ss.getPrezime().toLowerCase().contains(partPrezime.toLowerCase()) && ss.getIme().toLowerCase().contains(partIme.toLowerCase()) && ss.getBrIndexa().toLowerCase().contains(partIndex.toLowerCase())) 
+					{
+						studentiPretraga.add(ss);
+					}
+				}
+				
+				
+				
+			}
+		}
+		
+		insertTableStudent(studentiPretraga);
+
 		
 		
 		
