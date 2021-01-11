@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
+import Model.Profesor;
 import Model.Student;
 import View.MainWindow;
 import View.WorkSpace;
@@ -22,10 +23,11 @@ public class ButtonSearchController extends AbstractAction {
 		
 		int index = MainWindow.getInstance().getWorkSpace().getTabs().getSelectedIndex();
 		String s = MainWindow.getInstance().getTool().getTxtSearch().getText();
-		String[] parts = s.split(" ");
+		String[] parts = s.split("\\ ");
 		System.out.println(parts.length);
 
 		ArrayList<Student> studentiPretraga = new ArrayList<Student> ();
+		ArrayList<Profesor> profesorPretraga = new ArrayList<Profesor> ();
 		
 		if(s.equals(" ")) 
 		{
@@ -81,9 +83,26 @@ public class ButtonSearchController extends AbstractAction {
 				
 				
 			}
+		}else if(index == 1) 
+		{
+			if(parts.length==1) 
+			{
+				int i=0;
+				String partPrezime=parts[0];
+				for(i=0;i<MainWindow.getInstance().getModel().getProfesori().size();i++) 
+				{
+					Profesor prof = MainWindow.getInstance().getModel().getProfesori().get(i);
+					if(prof.getPrezime().toLowerCase().contains(partPrezime.toLowerCase()))
+					{
+						profesorPretraga.add(prof);
+					}
+				}
+			}
+			
 		}
 		
 		insertTableStudent(studentiPretraga);
+		insertTableProfesor(profesorPretraga);
 
 		
 		
@@ -100,6 +119,19 @@ public class ButtonSearchController extends AbstractAction {
 			MainWindow.getInstance().getWorkSpace().getTmStudenti().addRow(o);
 		}
 		
+	}
+	
+	public void insertTableProfesor(ArrayList<Profesor> profesori) 
+	{
+		MainWindow.getInstance().getWorkSpace().getTmProfesori().setRowCount(0);
+		int i = 0;
+		for(i=0;i<profesori.size();i++)
+		{
+			Profesor prof = profesori.get(i);
+			Object[] o = {prof.getPrezime(),prof.getIme(),prof.getTitula(),prof.getZvanje()};
+			MainWindow.getInstance().getWorkSpace().getTmProfesori().addRow(o);
+		}
+	
 	}
 
 }
