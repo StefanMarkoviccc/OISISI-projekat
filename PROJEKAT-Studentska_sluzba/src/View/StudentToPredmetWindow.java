@@ -14,6 +14,7 @@ import javax.swing.JTable;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 
+import Controllers.ButtonPotvrdiStudentToPredmetController;
 import Model.Predmet;
 
 public class StudentToPredmetWindow extends JFrame
@@ -51,7 +52,7 @@ public class StudentToPredmetWindow extends JFrame
 		JPanel pnlTbl= new JPanel();
 		pnlTbl.setLayout(new BorderLayout());
 		pnlTbl.add(scp,BorderLayout.CENTER);
-		btnDodaj= new JButton("Dodaj");
+		btnDodaj= new JButton(new ButtonPotvrdiStudentToPredmetController());
 		btnOdustani= new JButton("Odustani");
 		
 		btnOdustani.addActionListener(new ActionListener() {
