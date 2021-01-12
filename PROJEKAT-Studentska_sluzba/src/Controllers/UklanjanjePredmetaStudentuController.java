@@ -13,5 +13,10 @@ public class UklanjanjePredmetaStudentuController extends AbstractAction{
 		UklanjanjePredmetaStudentuWindow.getInstance().show();
 		
 	}
+	
+	public UklanjanjePredmetaStudentuController() 
+	{
+		super("Ukloni");
+	}
 
 }

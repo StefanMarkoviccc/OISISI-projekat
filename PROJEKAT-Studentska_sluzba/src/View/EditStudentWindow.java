@@ -23,6 +23,7 @@ import Controllers.AddStudentController;
 import Controllers.PonistiOcenuController;
 import Controllers.PotvrdiIzmenuStudenta;
 import Controllers.StudentToPredmetController;
+import Controllers.UklanjanjePredmetaStudentuController;
 import Controllers.UnosOceneController;
 
 public class EditStudentWindow  extends JFrame
@@ -221,7 +222,7 @@ public class EditStudentWindow  extends JFrame
 		JPanel pnlButtons=new JPanel();
 		pnlButtons.setLayout(new FlowLayout(FlowLayout.LEFT));
 		JButton btnDodaj= new JButton(new StudentToPredmetController());
-		JButton btnObrisi= new JButton("Obrisi");
+		JButton btnObrisi= new JButton(new UklanjanjePredmetaStudentuController());
 		JButton btnPolaganje= new JButton(new UnosOceneController());
 		pnlButtons.add(btnDodaj);
 		pnlButtons.add(btnObrisi);

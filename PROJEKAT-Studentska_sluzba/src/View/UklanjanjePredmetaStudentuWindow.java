@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controllers.PotvrdiUklanjanjePredmetaSaStudentaController;
+
 public class UklanjanjePredmetaStudentuWindow extends JFrame
 {
 	private JButton btnDa;
@@ -25,11 +27,12 @@ public class UklanjanjePredmetaStudentuWindow extends JFrame
 		setTitle("Uklanjanje predmeta");
 		JPanel pnlMain = new JPanel();
 		pnlMain.setLayout(new BoxLayout(pnlMain, BoxLayout.Y_AXIS));
-		Dimension d = new Dimension(500,350);
+		Dimension d = new Dimension(250,150);
 		labelaPor = new JLabel("Da li zelite da ukonite predmet?");
 		labelaPor.setPreferredSize(d);
+		pack();
 		
-		btnDa = new JButton("Da");
+		btnDa = new JButton(new PotvrdiUklanjanjePredmetaSaStudentaController());
 		btnNe = new JButton("Ne");
 		btnNe.addActionListener(new ActionListener() {
 			
@@ -49,8 +52,8 @@ public class UklanjanjePredmetaStudentuWindow extends JFrame
 		pnlButtons.add(btnDa);
 		pnlButtons.add(btnNe);
 		
-		pnlMain.add(pnlButtons);
 		pnlMain.add(pnlText);
+		pnlMain.add(pnlButtons);
 		
 		add(pnlMain,BorderLayout.CENTER);
  		
