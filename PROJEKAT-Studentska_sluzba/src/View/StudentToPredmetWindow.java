@@ -85,4 +85,38 @@ public class StudentToPredmetWindow extends JFrame
 		}
 	}
 
+	public JTable getTblPredmeti() {
+		return tblPredmeti;
+	}
+
+	public void setTblPredmeti(JTable tblPredmeti) {
+		this.tblPredmeti = tblPredmeti;
+	}
+
+	public DefaultTableModel getDtmPredmeti() {
+		return dtmPredmeti;
+	}
+
+	public void setDtmPredmeti(DefaultTableModel dtmPredmeti) {
+		this.dtmPredmeti = dtmPredmeti;
+	}
+
+	public JButton getBtnDodaj() {
+		return btnDodaj;
+	}
+
+	public void setBtnDodaj(JButton btnDodaj) {
+		this.btnDodaj = btnDodaj;
+	}
+
+	public JButton getBtnOdustani() {
+		return btnOdustani;
+	}
+
+	public void setBtnOdustani(JButton btnOdustani) {
+		this.btnOdustani = btnOdustani;
+	}
+
+	
+	
 }
