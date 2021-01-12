@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Controllers.ButtonPotvrdiPonistavanjeOceneController;
+
 public class PotvrdiPonistavanjeOceneWindow extends JFrame {
 	
 	public JLabel labelaText;
@@ -32,7 +34,7 @@ public class PotvrdiPonistavanjeOceneWindow extends JFrame {
 		pnlText.setLayout(new BorderLayout());
 		pnlButtons.setLayout(new FlowLayout(new FlowLayout().CENTER));
 		
-		btnDa = new JButton("Da");
+		btnDa = new JButton(new ButtonPotvrdiPonistavanjeOceneController());
 		btnNe = new JButton("Ne");
 		btnNe.addActionListener(new ActionListener() {
 			

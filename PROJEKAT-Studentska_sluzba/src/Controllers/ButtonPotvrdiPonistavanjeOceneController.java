@@ -21,5 +21,10 @@ public class ButtonPotvrdiPonistavanjeOceneController extends AbstractAction {
 		PotvrdiPonistavanjeOceneWindow.getInstance().dispose();
 		
 	}
+	
+	public ButtonPotvrdiPonistavanjeOceneController() 
+	{
+		super("Da");
+	}
 
 }
