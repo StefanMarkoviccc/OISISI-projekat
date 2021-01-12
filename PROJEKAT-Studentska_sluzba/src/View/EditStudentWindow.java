@@ -261,6 +261,48 @@ public class EditStudentWindow  extends JFrame
 		add(tabs,BorderLayout.CENTER);
 		
 	}
+	
+	
+
+	public JTabbedPane getTabs() {
+		return tabs;
+	}
+
+	public void setTabs(JTabbedPane tabs) {
+		this.tabs = tabs;
+	}
+
+	public JTable getTablePolozeni() {
+		return tablePolozeni;
+	}
+
+	public void setTablePolozeni(JTable tablePolozeni) {
+		this.tablePolozeni = tablePolozeni;
+	}
+
+	public DefaultTableModel getTmPolozeni() {
+		return tmPolozeni;
+	}
+
+	public void setTmPolozeni(DefaultTableModel tmPolozeni) {
+		this.tmPolozeni = tmPolozeni;
+	}
+
+	public JTable getTableNepolozeni() {
+		return tableNepolozeni;
+	}
+
+	public void setTableNepolozeni(JTable tableNepolozeni) {
+		this.tableNepolozeni = tableNepolozeni;
+	}
+
+	public DefaultTableModel getTmNepolozeni() {
+		return tmNepolozeni;
+	}
+
+	public void setTmNepolozeni(DefaultTableModel tmNepolozeni) {
+		this.tmNepolozeni = tmNepolozeni;
+	}
 
 	public JTextField getTxtIme() {
 		return txtIme;
