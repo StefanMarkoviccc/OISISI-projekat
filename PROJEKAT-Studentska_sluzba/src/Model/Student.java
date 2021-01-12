@@ -26,10 +26,6 @@ public class Student implements Serializable {
 	private ArrayList<Ocena> ocene;
 	private ArrayList<Predmet> nepolozeniPredmeti;
 	
-	
-	
-	
-	
 	public Student(
 	String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String kontaktTel,
 		String emailAdresa, String brIndexa, int godUpisa,TrenutnaGodina godina, Status status) {
@@ -48,64 +44,37 @@ public class Student implements Serializable {
 	this.nepolozeniPredmeti = new ArrayList<Predmet>() ;
 	}
 	
-	
-	
-
 	public TrenutnaGodina getGodina() {
 		return godina;
 	}
-
-
-
 
 	public void setGodina(TrenutnaGodina godina) {
 		this.godina = godina;
 	}
 
-
-
-
 	public Status getStatus() {
 		return status;
 	}
-
-
-
 
 	public void setStatus(Status status) {
 		this.status = status;
 	}
 
-
-
-
 	public ArrayList<Ocena> getOcene() {
 		return ocene;
 	}
-
-
-
 
 	public void setOcene(ArrayList<Ocena> ocene) {
 		this.ocene = ocene;
 	}
 
-
-
-
 	public ArrayList<Predmet> getNepolozeniPredmeti() {
 		return nepolozeniPredmeti;
 	}
 
-
-
-
 	public void setNepolozeniPredmeti(ArrayList<Predmet> nepolozeniPredmeti) {
 		this.nepolozeniPredmeti = nepolozeniPredmeti;
 	}
-
-
-
 
 	public String getPrezime() {
 		return prezime;
