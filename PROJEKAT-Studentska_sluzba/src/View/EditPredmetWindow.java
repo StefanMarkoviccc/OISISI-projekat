@@ -29,6 +29,8 @@ public class EditPredmetWindow extends JFrame
 	private JComboBox<String> cmbTrGodStud;
 	private JTextField txtProfesor;
 	private JTextField txtESPB;
+	private JButton btnPlus;
+	private JButton btnMinus;
 	
 	
 	private static EditPredmetWindow instance;
@@ -52,6 +54,8 @@ public class EditPredmetWindow extends JFrame
 	
 	public EditPredmetWindow() 
 	{
+		btnPlus= new JButton("+");
+		btnMinus= new JButton("-");
 		setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(800,600));
 		pack();
@@ -101,8 +105,12 @@ public class EditPredmetWindow extends JFrame
 		levo.add(Box.createVerticalStrut(10));
 		levo.add(btnPotvrdi);
 		levo.add(Box.createVerticalStrut(10));
-		System.out.println("test");
-		
+
+		JPanel pnl= new JPanel();
+		pnl.add(txtProfesor);
+		pnl.add(btnPlus);
+		pnl.add(btnMinus);
+		pnl.setLayout(new FlowLayout());
 		desno.add(txtSifraPred);
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(txtNazivPred);
@@ -111,9 +119,10 @@ public class EditPredmetWindow extends JFrame
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(cmbTrGodStud);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtProfesor);
-		desno.add(Box.createVerticalStrut(10));
 		desno.add(txtESPB);
+
+		desno.add(Box.createVerticalStrut(10));
+		desno.add(pnl);
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(btnOdustani);
 	
@@ -146,12 +155,7 @@ public class EditPredmetWindow extends JFrame
 		pnlPali.add(scrollPali,BorderLayout.CENTER);
 		mainPanel.add(levo);
 		mainPanel.add(desno);
-		tabs= new JTabbedPane();
-		tabs.add("Informacije",mainPanel);
-		tabs.add("Polozeni",pnlPolozili);
-		tabs.add("Pali",pnlPali);
-		
-		add(tabs,BorderLayout.CENTER);
+		add(mainPanel,BorderLayout.CENTER);
 		
 		
 	}
