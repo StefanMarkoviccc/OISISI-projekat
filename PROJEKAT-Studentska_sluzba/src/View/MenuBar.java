@@ -4,6 +4,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import Controllers.AboutController;
+
 public class MenuBar extends JMenuBar {
 	
 	private JMenu file;
@@ -20,7 +22,7 @@ public class MenuBar extends JMenuBar {
 		JMenuItem editItem = new JMenuItem("Edit");
 		JMenuItem deleteItem = new JMenuItem("Delete");
 		JMenuItem helpItem = new JMenuItem("Help");
-		JMenuItem aboutItem = new JMenuItem("About");
+		JMenuItem aboutItem = new JMenuItem(new AboutController());
 		
 		
 		file.add(newItem);
