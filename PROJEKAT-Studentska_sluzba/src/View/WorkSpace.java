@@ -154,7 +154,7 @@ public class WorkSpace extends JPanel{
 		for(int i=0; i<MainWindow.getInstance().getModel().getStudenti().size(); i++) 
 		{
 			Student s=MainWindow.getInstance().getModel().getStudenti().get(i);
-			Object[] data= {s.getBrIndexa(),s.getIme(),s.getPrezime(),s.getGodUpisa(),s.getStatus(),s.getProsecnaOcena()};
+			Object[] data= {s.getBrIndexa(),s.getIme(),s.getPrezime(),s.getGodina(),s.getStatus(),s.getProsecnaOcena()};
 			MainWindow.getInstance().getWorkSpace().getTmStudenti().addRow(data);	
 		}
 	}
