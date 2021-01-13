@@ -1,3 +1,4 @@
+package Main;
 import View.MainWindow;
 
 public class Main {
