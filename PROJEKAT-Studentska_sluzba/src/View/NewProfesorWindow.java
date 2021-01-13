@@ -35,7 +35,8 @@ public class NewProfesorWindow extends JFrame{
 	private JTextField txtBrojLicneKarte;
 	private JTextField txtTitula;
 	private JTextField txtZvanje;
-	
+	private PredmetiPanel predmetiPanel;
+	private JTabbedPane tabs;
 	private JLabel lblIme;
 	private JLabel lblPrezime;
 	private JLabel lblDatumRodjenja;
@@ -46,7 +47,8 @@ public class NewProfesorWindow extends JFrame{
 	private JLabel lblBrojLicneKarte;
 	private JLabel lblTitula;
 	private JLabel lblZvanje;
-
+	private JComboBox<String> cmbTitula;
+	private JComboBox<String> cmbZvanje;
 	
 	private JButton btnPotvrdi;
 	private JButton btnOdustani;
@@ -65,6 +67,22 @@ public class NewProfesorWindow extends JFrame{
 	
 	public NewProfesorWindow() 
 	{
+		cmbTitula= new JComboBox<String>();
+		cmbZvanje= new JComboBox<String>();
+		cmbTitula.addItem("BCs");
+		cmbTitula.addItem("MSc");
+		cmbTitula.addItem("prof_dr");
+		cmbTitula.addItem("mr");
+		cmbTitula.addItem("dr");
+	
+		cmbZvanje.addItem("saradnik_u_nastavi");
+		cmbZvanje.addItem("asistent");
+		cmbZvanje.addItem("asistent_sa_doktoratom");
+		cmbZvanje.addItem("docent");
+		cmbZvanje.addItem("radovni_profesor");
+
+		cmbZvanje.addItem("vanredni_profesor");
+		cmbZvanje.addItem("profesor_emeritus");
 		Dimension dim= new Dimension(200,20);
 		setLayout(new BorderLayout());
 		JPanel mainPanel= new JPanel();
@@ -158,9 +176,9 @@ public class NewProfesorWindow extends JFrame{
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(txtBrojLicneKarte);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtTitula);
+		desno.add(cmbTitula);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtZvanje);
+		desno.add(cmbZvanje);
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(btnOdustani);
 		desno.add(Box.createVerticalStrut(10));

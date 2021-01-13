@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import Enums.Titula;
+import Enums.Zvanje;
 import Model.Predmet;
 import Model.Profesor;
 import Model.Student;
@@ -72,8 +74,72 @@ public class EditEntityControler extends AbstractAction {
 			EditProfesorWindow.getInstance().getTxtEmail().setText(prof.getEmail());
 			EditProfesorWindow.getInstance().getTxtAdresaKancelarije().setText(prof.getAdresaKancelarije());
 			EditProfesorWindow.getInstance().getTxtBrojLicneKarte().setText(prof.getBrLK());
-			EditProfesorWindow.getInstance().getTxtTitula().setText(prof.getTitula());
-			EditProfesorWindow.getInstance().getTxtZvanje().setText(prof.getZvanje());
+			
+			if(prof.getTitula()==Titula.BCs) 
+			{
+				EditProfesorWindow.getInstance().getCmbTitula().setSelectedIndex(0);
+				
+			}
+			else if(prof.getTitula()==Titula.MSc) 
+			{
+				EditProfesorWindow.getInstance().getCmbTitula().setSelectedIndex(1);
+
+			}
+			else if(prof.getTitula()==Titula.mr) 
+			{
+				EditProfesorWindow.getInstance().getCmbTitula().setSelectedIndex(2);
+
+			}
+			else if(prof.getTitula()==Titula.dr) 
+			{
+				EditProfesorWindow.getInstance().getCmbTitula().setSelectedIndex(3);
+
+			}
+			else 
+			{
+				EditProfesorWindow.getInstance().getCmbTitula().setSelectedIndex(4);
+
+			}
+			if(prof.getZvanje()==Zvanje.saradnik_u_nastavi) 
+			{
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(0);
+			}
+			else if(prof.getZvanje()==Zvanje.asistent) 
+			{
+				
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(1);
+
+			}
+			else if(prof.getZvanje()==Zvanje.asistent_sa_doktoratom) 
+			{
+				
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(2);
+
+			}
+			else if(prof.getZvanje()==Zvanje.docent) 
+			{
+				
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(3);
+
+			}
+			else if(prof.getZvanje()==Zvanje.vanredni_profesor) 
+			{
+				
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(4);
+
+			}
+			else if(prof.getZvanje()==Zvanje.vanredni_profesor) 
+			{
+				
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(5);
+
+			}
+			else 
+			{
+				EditProfesorWindow.getInstance().getCmbZvanje().setSelectedIndex(6);
+
+				
+			}
 			EditProfesorWindow.getInstance().show();
 		}
 	
