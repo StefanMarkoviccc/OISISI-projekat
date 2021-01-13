@@ -51,6 +51,7 @@ public class AddPredmetController extends AbstractAction {
 		Profesor predmetniProfesor=MainWindow.getInstance().getModel().findProfesor(brLik);
 		if(predmetniProfesor==null) 
 		{
+			
 			return;
 		}
 		Predmet p = new Predmet(sifraPred,nazivPred,sem,trGod,predmetniProfesor,ESPB);

@@ -28,7 +28,7 @@ public class PotvrdiIzmenuPredmeta extends AbstractAction
 		Predmet pred= MainWindow.getInstance().getModel().getPredmeti().get(row);
 		
 		String sifraPred=EditPredmetWindow.getInstance().getTxtSifraPred().getText();
-		String nazivPred=EditPredmetWindow.getInstance().getTxtSifraPred().getText();
+		String nazivPred=EditPredmetWindow.getInstance().getTxtNazivPred().getText();
 		String  brLik=EditPredmetWindow.getInstance().getTxtProfesor().getText(); 	
 		int ESPB=Integer.parseInt(EditPredmetWindow.getInstance().getTxtESPB().getText());
 		
