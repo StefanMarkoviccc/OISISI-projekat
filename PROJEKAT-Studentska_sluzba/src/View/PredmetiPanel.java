@@ -9,6 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import Controllers.DodavanjePredmetaProfesoruController;
+
 public class PredmetiPanel  extends JPanel
 {
 	private JButton btnDodaj;
@@ -19,7 +21,7 @@ public class PredmetiPanel  extends JPanel
 	
 	public PredmetiPanel() 
 	{
-		btnDodaj= new JButton("Dodaj predmet");
+		btnDodaj= new JButton(new DodavanjePredmetaProfesoruController());
 		btnUkloni= new JButton("Ukloni predmeti");
 		setLayout(new BorderLayout());
 		Object[] data= {"Sifra","Naziv","Godina studija","Semestar"};
