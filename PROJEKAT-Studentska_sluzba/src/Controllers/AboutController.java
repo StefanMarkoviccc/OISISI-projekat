@@ -19,7 +19,7 @@ public class AboutController extends AbstractAction {
 		dial.setPreferredSize(new Dimension(200,200));
 		dial.pack();
 		dial.add(lbl);
-		
+		dial.show();
 	}
 	
 	public AboutController() 
