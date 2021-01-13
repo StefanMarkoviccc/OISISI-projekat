@@ -2,6 +2,8 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -10,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import Controllers.DodavanjePredmetaProfesoruController;
+import Model.Profesor;
 
 public class PredmetiPanel  extends JPanel
 {
@@ -23,6 +26,22 @@ public class PredmetiPanel  extends JPanel
 	{
 		btnDodaj= new JButton(new DodavanjePredmetaProfesoruController());
 		btnUkloni= new JButton("Ukloni predmeti");
+		btnUkloni.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int ind=EditProfesorWindow.getInstance().getPredmetiPanel().getTablePredmeti().getSelectedRow();
+				int indP=MainWindow.getInstance().getWorkSpace().getTableProfesori().getSelectedRow();
+				Profesor p= MainWindow.getInstance().getModel().getProfesori().get(indP);
+				p.getPredmeti().remove(ind);
+				if(ind!=-1) 
+				{
+					EditProfesorWindow.getInstance().getPredmetiPanel().getDtmPredmeti().removeRow(ind);
+					
+				}
+				
+			}
+		});
 		setLayout(new BorderLayout());
 		Object[] data= {"Sifra","Naziv","Godina studija","Semestar"};
 		dtmPredmeti= new DefaultTableModel(data,0);
