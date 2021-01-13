@@ -3,6 +3,8 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -102,6 +104,15 @@ public class NewStudentWindow extends JFrame{
 		btnOdustani.setPreferredSize(dim);
 		btnPotvrdi = new JButton(new AddStudentController());
 		btnPotvrdi.setPreferredSize(dim);
+		
+		btnOdustani.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				NewStudentWindow.getInstance().dispose();
+			}
+		});
 		
 		cmbTrGodStud.addItem("I(prva)");
 		cmbTrGodStud.addItem("II(druga)");

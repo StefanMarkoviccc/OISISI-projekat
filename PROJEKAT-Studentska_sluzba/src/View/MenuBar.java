@@ -32,7 +32,6 @@ public class MenuBar extends JMenuBar {
 		JMenuItem deleteItem = new JMenuItem(new DeleteEntityController());
 		JMenuItem helpItem = new JMenuItem("Help");
 		JMenuItem aboutItem = new JMenuItem(new AboutController());
-		aboutItem.setText("About");
 		
 		newItem.setText("New");
 			KeyStroke keyStrokeOtvori = KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK);
