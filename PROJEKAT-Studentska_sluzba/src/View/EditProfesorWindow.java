@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import Controllers.ButtonOdustaniControllerProf;
@@ -30,7 +31,8 @@ public class EditProfesorWindow extends JFrame{
 	private JTextField txtBrojLicneKarte;
 	private JTextField txtTitula;
 	private JTextField txtZvanje;
-	
+	private PredmetiPanel predmetiPanel;
+	private JTabbedPane tabs;
 	private JLabel lblIme;
 	private JLabel lblPrezime;
 	private JLabel lblDatumRodjenja;
@@ -60,6 +62,8 @@ public class EditProfesorWindow extends JFrame{
 	
 	public EditProfesorWindow() 
 	{
+		tabs= new JTabbedPane();
+		predmetiPanel= new PredmetiPanel();
 		Dimension dim= new Dimension(200,20);
 		setLayout(new BorderLayout());
 		JPanel mainPanel= new JPanel();
@@ -171,6 +175,9 @@ public class EditProfesorWindow extends JFrame{
 		
 		mainPanel.add(levo);
 		mainPanel.add(desno);
+		tabs.add("Infomracije",mainPanel);
+		tabs.add("Predmeti",predmetiPanel);
+		add(tabs,BorderLayout.CENTER);
 		
 	}
 

@@ -32,7 +32,6 @@ public class EditPredmetWindow extends JFrame
 	private JButton btnPlus;
 	private JButton btnMinus;
 	
-	
 	private static EditPredmetWindow instance;
 	private JLabel labelaSifraPred;
 	private JLabel labelaNazivPred;
@@ -155,6 +154,7 @@ public class EditPredmetWindow extends JFrame
 		pnlPali.add(scrollPali,BorderLayout.CENTER);
 		mainPanel.add(levo);
 		mainPanel.add(desno);
+		
 		add(mainPanel,BorderLayout.CENTER);
 		
 		
