@@ -65,7 +65,8 @@ public class EditEntityControler extends AbstractAction {
 			Profesor prof = MainWindow.getInstance().getModel().getProfesori().get(row);
 			EditProfesorWindow.getInstance().getTxtIme().setText(prof.getIme());
 			EditProfesorWindow.getInstance().getTxtPrezime().setText(prof.getPrezime());
-			EditProfesorWindow.getInstance().getTxtDatumRodjenja().setText(prof.getDatumR().toString());
+			String txt=String.valueOf(prof.getDatumR().getYear())+"-"+String.valueOf(prof.getDatumR().getMonthValue())+"-"+String.valueOf(prof.getDatumR().getDayOfMonth());
+			EditProfesorWindow.getInstance().getTxtDatumRodjenja().setText(txt);
 			EditProfesorWindow.getInstance().getTxtAdresaStanovanja().setText(prof.getAdresaStanovanja());
 			EditProfesorWindow.getInstance().getTxtBrojTelefona().setText(prof.getTelefon());
 			EditProfesorWindow.getInstance().getTxtEmail().setText(prof.getEmail());
