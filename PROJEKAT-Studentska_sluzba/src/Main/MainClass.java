@@ -1,11 +1,12 @@
 package Main;
 import View.MainWindow;
 
-public class Main {
+public class MainClass {
 
 	public static void main(String[] args) {
 		
 		MainWindow.getInstance().show();
+		
 
 	}
 

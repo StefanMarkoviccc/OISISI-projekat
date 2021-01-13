@@ -363,6 +363,42 @@ public class NewProfesorWindow extends JFrame{
 	public void setBtnOdustani(JButton btnOdustani) {
 		this.btnOdustani = btnOdustani;
 	}
+
+	public PredmetiPanel getPredmetiPanel() {
+		return predmetiPanel;
+	}
+
+	public void setPredmetiPanel(PredmetiPanel predmetiPanel) {
+		this.predmetiPanel = predmetiPanel;
+	}
+
+	public JTabbedPane getTabs() {
+		return tabs;
+	}
+
+	public void setTabs(JTabbedPane tabs) {
+		this.tabs = tabs;
+	}
+
+	public JComboBox<String> getCmbTitula() {
+		return cmbTitula;
+	}
+
+	public void setCmbTitula(JComboBox<String> cmbTitula) {
+		this.cmbTitula = cmbTitula;
+	}
+
+	public JComboBox<String> getCmbZvanje() {
+		return cmbZvanje;
+	}
+
+	public void setCmbZvanje(JComboBox<String> cmbZvanje) {
+		this.cmbZvanje = cmbZvanje;
+	}
+
+	public static void setInstance(NewProfesorWindow instance) {
+		NewProfesorWindow.instance = instance;
+	}
 	
 	
 
