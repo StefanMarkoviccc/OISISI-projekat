@@ -1,5 +1,7 @@
 package Model;
 import java.io.Serializable;
+import Enums.Titula;
+import Enums.Zvanje;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -17,13 +19,13 @@ public class Profesor implements Serializable {
 	private String email;
 	private String adresaKancelarije;
 	private String brLK;
-	private String titula;
-	private String zvanje;
+	private Titula titula;
+	private Zvanje zvanje;
 	private ArrayList<Predmet> predmeti;
 	
 
 	public Profesor(String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String telefon,
-			String email, String adresaKancelarije, String brLK, String titula, String zvanje,
+			String email, String adresaKancelarije, String brLK, Titula titula, Zvanje zvanje,
 			ArrayList<Predmet> predmeti) {
 		super();
 		this.prezime = prezime;
@@ -40,7 +42,7 @@ public class Profesor implements Serializable {
 	}
 	
 	public Profesor(String prezime, String ime, LocalDateTime datumR, String adresaStanovanja, String telefon,
-			String email, String adresaKancelarije, String brLK, String titula, String zvanje) {
+			String email, String adresaKancelarije, String brLK, Titula titula, Zvanje zvanje) {
 		super();
 		this.prezime = prezime;
 		this.ime = ime;
@@ -103,18 +105,24 @@ public class Profesor implements Serializable {
 	public void setBrLK(String brLK) {
 		this.brLK = brLK;
 	}
-	public String getTitula() {
+
+	
+	public Titula getTitula() {
 		return titula;
 	}
-	public void setTitula(String titula) {
+
+	public void setTitula(Titula titula) {
 		this.titula = titula;
 	}
-	public String getZvanje() {
+
+	public Zvanje getZvanje() {
 		return zvanje;
 	}
-	public void setZvanje(String zvanje) {
+
+	public void setZvanje(Zvanje zvanje) {
 		this.zvanje = zvanje;
 	}
+
 	public ArrayList<Predmet> getPredmeti() {
 		return predmeti;
 	}
