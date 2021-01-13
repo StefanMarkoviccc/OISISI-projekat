@@ -39,6 +39,46 @@ public class PredmetiPanel  extends JPanel
 		add(pnlButtons,BorderLayout.NORTH);
 		add(pnlTable,BorderLayout.CENTER);
 	}
+
+
+	public JButton getBtnDodaj() {
+		return btnDodaj;
+	}
+
+
+	public void setBtnDodaj(JButton btnDodaj) {
+		this.btnDodaj = btnDodaj;
+	}
+
+
+	public JButton getBtnUkloni() {
+		return btnUkloni;
+	}
+
+
+	public void setBtnUkloni(JButton btnUkloni) {
+		this.btnUkloni = btnUkloni;
+	}
+
+
+	public JTable getTablePredmeti() {
+		return tablePredmeti;
+	}
+
+
+	public void setTablePredmeti(JTable tablePredmeti) {
+		this.tablePredmeti = tablePredmeti;
+	}
+
+
+	public DefaultTableModel getDtmPredmeti() {
+		return dtmPredmeti;
+	}
+
+
+	public void setDtmPredmeti(DefaultTableModel dtmPredmeti) {
+		this.dtmPredmeti = dtmPredmeti;
+	}
 	
 	
 

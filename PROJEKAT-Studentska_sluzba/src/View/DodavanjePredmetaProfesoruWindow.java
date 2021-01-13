@@ -15,6 +15,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import Controllers.PotvrdiDodavanjePredmetaProfesoruController;
 import Model.Predmet;
 
 public class DodavanjePredmetaProfesoruWindow extends JFrame
@@ -38,6 +39,46 @@ public class DodavanjePredmetaProfesoruWindow extends JFrame
 		
 	}
 	
+	public JButton getBtnOdustani() {
+		return btnOdustani;
+	}
+
+	public void setBtnOdustani(JButton btnOdustani) {
+		this.btnOdustani = btnOdustani;
+	}
+
+	public JTable getTblPredmeti() {
+		return tblPredmeti;
+	}
+
+	public void setTblPredmeti(JTable tblPredmeti) {
+		this.tblPredmeti = tblPredmeti;
+	}
+
+	public JLabel getLblpredmeti() {
+		return lblpredmeti;
+	}
+
+	public void setLblpredmeti(JLabel lblpredmeti) {
+		this.lblpredmeti = lblpredmeti;
+	}
+
+	public DefaultTableModel getDtmPredmeti() {
+		return dtmPredmeti;
+	}
+
+	public void setDtmPredmeti(DefaultTableModel dtmPredmeti) {
+		this.dtmPredmeti = dtmPredmeti;
+	}
+
+	public JButton getBtnPotvrdi() {
+		return btnPotvrdi;
+	}
+
+	public void setBtnPotvrdi(JButton btnPotvrdi) {
+		this.btnPotvrdi = btnPotvrdi;
+	}
+
 	public DodavanjePredmetaProfesoruWindow()
 	{
 		setTitle("Dodaj predmet");
@@ -59,7 +100,7 @@ public class DodavanjePredmetaProfesoruWindow extends JFrame
 		pnlLabels.add(lblpredmeti);
 		add(pnlLabels, BorderLayout.NORTH);
 		
-		btnPotvrdi= new JButton("Potvdi");
+		btnPotvrdi= new JButton(new PotvrdiDodavanjePredmetaProfesoruController());
 		btnOdustani= new JButton("Odustani");
 		btnOdustani.addActionListener(new ActionListener() {
 			

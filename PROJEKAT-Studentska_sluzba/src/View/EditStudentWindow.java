@@ -519,6 +519,8 @@ public class EditStudentWindow  extends JFrame
 
 	public static void fillNepolozeni()
 	{
+		EditStudentWindow.getInstance().getTmNepolozeni().setRowCount(0);
+
 		int ind = MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
 		Student s= MainWindow.getInstance().getModel().getStudenti().get(ind);
 		ArrayList<Predmet> predmeti =s.getNepolozeniPredmeti();
@@ -531,6 +533,7 @@ public class EditStudentWindow  extends JFrame
 	
 	public static void fillPolozeni()
 	{
+		EditStudentWindow.getInstance().getTmPolozeni().setRowCount(0);
 		int index= MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
 		Student s= MainWindow.getInstance().getModel().getStudenti().get(index);
 		ArrayList<Ocena> ocene=s.getOcene();

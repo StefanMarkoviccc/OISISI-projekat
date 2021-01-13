@@ -59,6 +59,7 @@ public class EditEntityControler extends AbstractAction {
 			EditPredmetWindow.getInstance().getTxtESPB().setText(String.valueOf(pred.getEspb()));
 			EditPredmetWindow.getInstance().getTxtNazivPred().setText(pred.getNazivPr());
 			EditPredmetWindow.getInstance().getTxtProfesor().setText(pred.getProfesor().getBrLK());
+			
 			EditPredmetWindow.getInstance().show();
 			
 			
@@ -141,6 +142,7 @@ public class EditEntityControler extends AbstractAction {
 
 				
 			}
+			EditProfesorWindow.fillPredmeteProfesoru();
 			EditProfesorWindow.getInstance().show();
 		}
 	

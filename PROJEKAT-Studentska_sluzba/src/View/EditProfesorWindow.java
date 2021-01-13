@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -18,6 +19,8 @@ import javax.swing.JComboBox;
 import Controllers.ButtonOdustaniControllerProf;
 import Controllers.ButtonPotvrdiControllerProf;
 import Controllers.PotvrdiIzmenuProfesora;
+import Model.Predmet;
+import Model.Profesor;
 
 public class EditProfesorWindow extends JFrame{
 	
@@ -406,6 +409,25 @@ public class EditProfesorWindow extends JFrame{
 
 	public void setCmbZvanje(JComboBox<String> cmbZvanje) {
 		this.cmbZvanje = cmbZvanje;
+	}
+	
+	public static void fillPredmeteProfesoru()
+	{
+		EditProfesorWindow.getInstance().getPredmetiPanel().getDtmPredmeti().setRowCount(0);
+		int index=MainWindow.getInstance().getWorkSpace().getTableProfesori().getSelectedRow();
+		if(index==-1) 
+		{
+			return ;
+		}
+		Profesor p=MainWindow.getInstance().getModel().getProfesori().get(index);
+		ArrayList<Predmet> predmeti=p.getPredmeti();
+		for(Predmet pred : predmeti) 
+		{
+			
+			Object[] data= {pred.getSifraPr(),pred.getNazivPr(),pred.getGodStudija(),pred.getSemestar()};
+			EditProfesorWindow.getInstance().getPredmetiPanel().getDtmPredmeti().addRow(data);
+		}
+		
 	}
 
 }
