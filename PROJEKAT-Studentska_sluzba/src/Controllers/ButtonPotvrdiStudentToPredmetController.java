@@ -6,6 +6,7 @@ import javax.swing.AbstractAction;
 
 import Model.Predmet;
 import Model.Student;
+import View.EditStudentWindow;
 import View.MainWindow;
 import View.StudentToPredmetWindow;
 
@@ -23,7 +24,16 @@ public class ButtonPotvrdiStudentToPredmetController extends AbstractAction {
 			String ss = (String)StudentToPredmetWindow.getInstance().getDtmPredmeti().getValueAt(ind[i] ,0);
 			String[] parts = ss.split("\\-");
 			Predmet pred = MainWindow.getInstance().getModel().findPredmet(parts[0]);
+			if(pred==null) 
+			{
+				return;
+			
+			}
 			s.getNepolozeniPredmeti().add(pred);
+			
+			Object[] o= {pred.getSifraPr(),pred.getNazivPr(),pred.getEspb(),pred.getGodStudija(),pred.getSemestar()};
+			EditStudentWindow.getInstance().getTmNepolozeni().addRow(o);
+			
 		}
 		
 		StudentToPredmetWindow.getInstance().dispose();	

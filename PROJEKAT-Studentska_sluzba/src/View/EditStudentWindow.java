@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -25,6 +26,8 @@ import Controllers.PotvrdiIzmenuStudenta;
 import Controllers.StudentToPredmetController;
 import Controllers.UklanjanjePredmetaStudentuController;
 import Controllers.UnosOceneController;
+import Model.Predmet;
+import Model.Student;
 
 public class EditStudentWindow  extends JFrame
 {
@@ -210,7 +213,7 @@ public class EditStudentWindow  extends JFrame
 		JScrollPane scrollPolozeni = new JScrollPane(tablePolozeni);
 		
 		
-		Object[] nepolozeni={"Sifra predmeta","Naziv predmeta","ESPB","Ocena","Datum"};
+		Object[] nepolozeni={"Sifra predmeta","Naziv predmeta","ESPB","Godina studija","Semestar"};
 		tmNepolozeni= new DefaultTableModel(nepolozeni,0);
 		tableNepolozeni= new JTable(tmNepolozeni);
 		JScrollPane scrollNepolozeni= new JScrollPane(tableNepolozeni);
@@ -482,7 +485,18 @@ public class EditStudentWindow  extends JFrame
 	}
 	
 	
-	
+	public static void fillNepolozeni() 
+	{
+		int index=MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
+		Student student=MainWindow.getInstance().getModel().getStudenti().get(index);
+		ArrayList<Predmet> predmeti=student.getNepolozeniPredmeti();
+		System.out.println(predmeti.size());
+		for(Predmet pred : predmeti) 
+		{
+			Object[] o= {pred.getSifraPr(),pred.getNazivPr(),pred.getEspb(),pred.getGodStudija(),pred.getSemestar()};
+			EditStudentWindow.getInstance().getTmNepolozeni().addRow(o);
+		}
+	}
 	
 
 }

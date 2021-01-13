@@ -139,7 +139,7 @@ public class Model implements Serializable {
 	{
 		for(int i=0;i<predmeti.size();i++) 
 		{
-			if(predmeti.get(i).getSifraPr()==pr.getSifraPr()) 
+			if(predmeti.get(i).getSifraPr().equals(pr.getSifraPr())) 
 			{
 				return false;
 			}
@@ -166,7 +166,7 @@ public class Model implements Serializable {
 	{
 		for(int i=0;i<predmeti.size();i++) 
 		{
-			if(predmeti.get(i).getSifraPr()==sifraPr)
+			if(predmeti.get(i).getSifraPr().equals(sifraPr))
 			{
 				return predmeti.get(i);
 				
