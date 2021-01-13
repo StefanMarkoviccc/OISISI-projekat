@@ -18,6 +18,7 @@ public class ButtonPotvrdiPonistavanjeOceneController extends AbstractAction {
 		int indStudenta = MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
 		Student stud = MainWindow.getInstance().getModel().getStudenti().get(indStudenta);
 		stud.getOcene().remove(i);
+		EditStudentWindow.getInstance().getTmPolozeni().removeRow(i);
 		PotvrdiPonistavanjeOceneWindow.getInstance().dispose();
 		
 	}
