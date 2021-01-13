@@ -30,7 +30,7 @@ public class EditEntityControler extends AbstractAction {
 			{
 				return;
 				
-				}
+			}
 			Student stud=MainWindow.getInstance().getModel().getStudenti().get(row);
 			
 			EditStudentWindow.getInstance().getTxtAdresaStan().setText(stud.getAdresaStanovanja());
