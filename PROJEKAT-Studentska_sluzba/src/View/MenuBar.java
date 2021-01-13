@@ -9,6 +9,7 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 import Controllers.AboutController;
+import Controllers.CloseController;
 import Controllers.DeleteEntityController;
 import Controllers.EditEntityControler;
 import Controllers.HelpController;
@@ -27,10 +28,10 @@ public class MenuBar extends JMenuBar {
 		help = new JMenu(new HelpController());
 		help.setText("Help");
 		JMenuItem newItem = new JMenuItem(new NewEntityController());
-		JMenuItem closeItem = new JMenuItem("Close");
+		JMenuItem closeItem = new JMenuItem(new CloseController());
 		JMenuItem editItem = new JMenuItem(new EditEntityControler());
 		JMenuItem deleteItem = new JMenuItem(new DeleteEntityController());
-		JMenuItem helpItem = new JMenuItem("Help");
+		JMenuItem helpItem = new JMenuItem(new HelpController());
 		JMenuItem aboutItem = new JMenuItem(new AboutController());
 		
 		newItem.setText("New");
