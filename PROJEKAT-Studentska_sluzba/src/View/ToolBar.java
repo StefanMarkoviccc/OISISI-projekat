@@ -36,7 +36,7 @@ public class ToolBar extends JPanel {
 		right.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
 		btnAdd = new JButton(new NewEntityController());
-		btnAdd.setText("+");
+	
 		btnEdit = new JButton(new EditEntityControler());
 		btnDelete = new JButton(new DeleteEntityController());
 		btnSearch = new JButton(new ButtonSearchController());

@@ -30,9 +30,8 @@ public class PredmetiPanel  extends JPanel
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+			
 				UklanjanjePredmetaProfesoruWindow.getInstance().show();
-
-				
 			}
 		});
 		setLayout(new BorderLayout());
