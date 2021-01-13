@@ -187,6 +187,11 @@ public class NewProfesorWindow extends JFrame{
 		mainPanel.add(desno);
 		
 	}
+	
+	public static void anuliraj() 
+	{
+		instance=null;
+	}
 
 	public JTextField getTxtIme() {
 		return txtIme;

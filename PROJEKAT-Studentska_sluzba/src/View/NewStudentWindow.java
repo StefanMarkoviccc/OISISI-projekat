@@ -44,6 +44,10 @@ public class NewStudentWindow extends JFrame{
 	private JButton btnOdustani;
 	private static NewStudentWindow instance;
 	
+	public static void anuliraj() 
+	{
+		instance=null;
+	}
 	public static NewStudentWindow getInstance() 
 	{
 		if(instance==null) 

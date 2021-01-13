@@ -114,10 +114,11 @@ public class ButtonPotvrdiControllerProf extends AbstractAction {
 		
 		
 		
-		Object[] rdata= { p.getIme(), p.getPrezime(), p.getTitula(),p.getTitula()};
+		Object[] rdata= { p.getIme(), p.getPrezime(), p.getTitula(),p.getZvanje()};
 		MainWindow.getInstance().getWorkSpace().getTmProfesori().addRow(rdata);
 		
 		NewProfesorWindow.getInstance().dispose();
+		NewProfesorWindow.anuliraj();
 		
 	}
 	public ButtonPotvrdiControllerProf()

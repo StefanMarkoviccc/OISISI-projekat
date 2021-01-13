@@ -105,7 +105,7 @@ public class AddStudentController extends AbstractAction {
 		MainWindow.getInstance().getWorkSpace().getTmStudenti().addRow(rowData);
 		
 		NewStudentWindow.getInstance().dispose(); //kad unesem podatke,zatvori prozor, sa interneta
-		
+		NewStudentWindow.anuliraj();
 		
 		}
 		
