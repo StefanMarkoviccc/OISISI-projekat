@@ -73,6 +73,7 @@ public class PotvrdiPolaganjeControler extends AbstractAction
 		EditStudentWindow.getInstance().getTmPolozeni().addRow(rowData);
 		EditStudentWindow.Calculate();
 		UnosOceneWindow.getInstance().dispose();
+		UnosOceneWindow.anuliraj();
 		
 	}
 

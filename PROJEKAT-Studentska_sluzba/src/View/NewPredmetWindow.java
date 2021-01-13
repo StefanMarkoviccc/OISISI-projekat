@@ -198,6 +198,10 @@ public class NewPredmetWindow extends JFrame {
 		this.cmbSemestar = cmbSemestar;
 	}
 
+	public static void anuliraj() 
+	{
+		instance=null;
+	}
 
 
 

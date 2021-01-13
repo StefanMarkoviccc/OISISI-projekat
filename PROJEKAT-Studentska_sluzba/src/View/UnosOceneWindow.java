@@ -104,6 +104,10 @@ public class UnosOceneWindow extends JFrame {
 			
 	}
 	
+	public static void anuliraj() 
+	{
+		instance=null;
+	}
 	public static UnosOceneWindow getInstance() 
 	{
 		if(instance==null) 

@@ -17,7 +17,7 @@ public class AddPredmetController extends AbstractAction {
 	public void actionPerformed(ActionEvent arg0) {
 			
 		String sifraPred=NewPredmetWindow.getInstance().getTxtSifraPred().getText();
-		String nazivPred=NewPredmetWindow.getInstance().getTxtSifraPred().getText();
+		String nazivPred=NewPredmetWindow.getInstance().getTxtNazivPred().getText();
 		String  brLik=NewPredmetWindow.getInstance().getTxtProfesor().getText(); 	
 		int ESPB=Integer.parseInt(NewPredmetWindow.getInstance().getTxtESPB().getText());
 		
@@ -61,6 +61,7 @@ public class AddPredmetController extends AbstractAction {
 		MainWindow.getInstance().getWorkSpace().getTmPredmeti().addRow(data);
 		
 		NewPredmetWindow.getInstance().dispose();
+		NewPredmetWindow.anuliraj();
 		
 	}
 	
