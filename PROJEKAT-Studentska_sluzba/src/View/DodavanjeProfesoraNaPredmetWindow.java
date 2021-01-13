@@ -14,6 +14,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import Model.Predmet;
 import Model.Profesor;
 
 public class DodavanjeProfesoraNaPredmetWindow extends JFrame
@@ -29,8 +30,29 @@ public class DodavanjeProfesoraNaPredmetWindow extends JFrame
 		JPanel pnlMain = new JPanel();
 		JPanel pnlButtons = new JPanel();
 		btnPotvrdi = new JButton("Potvrdi");
-		btnOdustani = new JButton("Odustani");
 		
+		btnPotvrdi.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				int index= DodavanjeProfesoraNaPredmetWindow.getInstance().getTableProfesori().getSelectedRow();
+				int row=MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
+				Predmet pred=MainWindow.getInstance().getModel().getPredmeti().get(row);
+				Profesor p=MainWindow.getInstance().getModel().getProfesori().get(index);
+				EditPredmetWindow.getInstance().getTxtProfesor().setText(p.getBrLK());
+				DodavanjeProfesoraNaPredmetWindow.getInstance().dispose();
+				
+			}
+		});
+		btnOdustani = new JButton("Odustani");
+		btnOdustani.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				DodavanjeProfesoraNaPredmetWindow.getInstance().dispose();
+				
+			}
+		});
 		setTitle("Odaberite profesora");
 		setPreferredSize(new Dimension(500,350));
 		pack();

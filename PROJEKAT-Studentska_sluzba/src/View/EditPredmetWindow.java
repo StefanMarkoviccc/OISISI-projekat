@@ -57,6 +57,15 @@ public class EditPredmetWindow extends JFrame
 	{
 		btnPlus= new JButton("+");
 		btnMinus= new JButton("-");
+		
+		btnPlus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				DodavanjeProfesoraNaPredmetWindow.getInstance().show();
+				
+			}
+		});
 		btnMinus.addActionListener(new ActionListener() {
 			
 			@Override
