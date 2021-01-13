@@ -95,9 +95,9 @@ public class EditPredmetWindow extends JFrame
 		levo.add(Box.createVerticalStrut(10));
 		levo.add(labelaGodStud);
 		levo.add(Box.createVerticalStrut(10));
-		levo.add(labelaProfesor);
-		levo.add(Box.createVerticalStrut(10));
 		levo.add(labelaESPB);
+		levo.add(Box.createVerticalStrut(10));
+		levo.add(labelaProfesor);
 		levo.add(Box.createVerticalStrut(10));
 		levo.add(btnPotvrdi);
 		levo.add(Box.createVerticalStrut(10));
