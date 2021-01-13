@@ -3,6 +3,8 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -55,6 +57,14 @@ public class EditPredmetWindow extends JFrame
 	{
 		btnPlus= new JButton("+");
 		btnMinus= new JButton("-");
+		btnMinus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			UkloniProfesoraSaPredmetaWindow.getInstance().show();
+				
+			}
+		});
 		setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(800,600));
 		pack();

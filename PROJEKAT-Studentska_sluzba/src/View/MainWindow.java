@@ -38,7 +38,7 @@ public class MainWindow extends JFrame {
 	{
 		model=new Model();
 		this.addWindowListener(new WindowListener());
-		setPreferredSize(new Dimension(500, 500));
+		setPreferredSize(new Dimension(700, 500));
 		pack();
 		setJMenuBar(new MenuBar());
 		setLayout(new BorderLayout());
