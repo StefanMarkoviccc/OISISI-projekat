@@ -55,6 +55,18 @@ private static UkloniProfesoraSaPredmetaWindow instance;
 		setTitle("Uklanjanje profesora sa predmeta");
 		lblporuka= new JLabel("Da li ste sigurni da zelite da ukonite profesora " );
 		dugmeDa= new JButton("Da");
+		
+		dugmeDa.addActionListener(new ActionListener()
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int index= MainWindow.getInstance().getWorkSpace().getTablePredmeti().getSelectedRow();
+				MainWindow.getInstance().getModel().getPredmeti().get(index).setProfesor(null);
+				UkloniProfesoraSaPredmetaWindow.getInstance().dispose();
+				
+			}
+		});
 		dugmeNe= new JButton("Ne");
 		
 		

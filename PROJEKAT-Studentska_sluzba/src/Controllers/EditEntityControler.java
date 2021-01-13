@@ -59,7 +59,14 @@ public class EditEntityControler extends AbstractAction {
 			EditPredmetWindow.getInstance().getTxtSifraPred().setText(pred.getSifraPr());
 			EditPredmetWindow.getInstance().getTxtESPB().setText(String.valueOf(pred.getEspb()));
 			EditPredmetWindow.getInstance().getTxtNazivPred().setText(pred.getNazivPr());
-			EditPredmetWindow.getInstance().getTxtProfesor().setText(pred.getProfesor().getBrLK());
+			if(pred.getProfesor()==null) 
+			{
+				EditPredmetWindow.getInstance().getTxtProfesor().setText("");
+			}else 
+			{
+				EditPredmetWindow.getInstance().getTxtProfesor().setText(pred.getProfesor().getBrLK());
+				
+			}
 			
 			EditPredmetWindow.getInstance().show();
 			
