@@ -6,5 +6,6 @@ public class Configuration
 {
 	public static File file = new File("resources/modelData.ss");
 	public static String absolutePath = file.getAbsolutePath();
+	public int test=0;
 
 }
