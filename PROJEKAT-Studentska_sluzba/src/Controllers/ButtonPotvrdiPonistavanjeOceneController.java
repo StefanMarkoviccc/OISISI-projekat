@@ -20,7 +20,7 @@ public class ButtonPotvrdiPonistavanjeOceneController extends AbstractAction {
 		stud.getOcene().remove(i);
 		EditStudentWindow.getInstance().getTmPolozeni().removeRow(i);
 		PotvrdiPonistavanjeOceneWindow.getInstance().dispose();
-		
+		EditStudentWindow.Calculate();
 	}
 	
 	public ButtonPotvrdiPonistavanjeOceneController() 
