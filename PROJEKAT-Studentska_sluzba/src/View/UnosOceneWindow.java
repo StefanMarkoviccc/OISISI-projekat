@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -14,20 +15,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Controllers.PotvrdiPolaganjeControler;
 import Model.Ocena;
+import Model.Student;
 
 public class UnosOceneWindow extends JFrame {
 	
-	public JLabel labelaSifra;
-	public JLabel labelaNaziv;
-	public JLabel labelaOcena;
-	public JLabel labelaDatum;
-	public JTextField txtSifra;
-	public JTextField txtNaziv;
-	public JComboBox<String> cmbOcena;
-	public JTextField txtDatum;
-	public JButton btnPotvrdi;
-	public JButton btnOdustani;
+	private JLabel labelaSifra;
+	private JLabel labelaNaziv;
+	private JLabel labelaOcena;
+	private JLabel labelaDatum;
+	private JTextField txtSifra;
+	private JTextField txtNaziv;
+	private JComboBox<String> cmbOcena;
+	private JTextField txtDatum;
+	private JButton btnPotvrdi;
+	private JButton btnOdustani;
 
 	public static UnosOceneWindow instance;
 	
@@ -42,19 +45,19 @@ public class UnosOceneWindow extends JFrame {
 		JLabel labelaNaziv = new JLabel("Naziv*");
 		JLabel labelaOcena = new JLabel("Ocena*");
 		JLabel labelaDatum = new JLabel("Datum*");
-		JTextField txtSifra = new JTextField();
+		 txtSifra = new JTextField();
 		txtSifra.setEditable(false);
-		JTextField txtNaziv = new JTextField();
+		 txtNaziv = new JTextField();
 		txtNaziv.setEditable(false);
-		JComboBox<String> cmbOcena = new JComboBox<String>();
+		cmbOcena = new JComboBox<String>();
 		cmbOcena.addItem("6");
 		cmbOcena.addItem("7");
 		cmbOcena.addItem("8");
 		cmbOcena.addItem("9");
 		cmbOcena.addItem("10");
 		
-		JTextField txtDatum = new JTextField();
-		JButton btnPotvrdi = new JButton("Potvrdi");
+		 txtDatum = new JTextField();
+		JButton btnPotvrdi = new JButton(new PotvrdiPolaganjeControler());
 		JButton btnOdustani = new JButton("Odustani");
 		JPanel pnlLevo = new JPanel();
 		JPanel pnlDesno = new JPanel();
@@ -109,4 +112,87 @@ public class UnosOceneWindow extends JFrame {
 		}
 		return instance;
 	}
+
+	public JLabel getLabelaSifra() {
+		return labelaSifra;
+	}
+
+	public void setLabelaSifra(JLabel labelaSifra) {
+		this.labelaSifra = labelaSifra;
+	}
+
+	public JLabel getLabelaNaziv() {
+		return labelaNaziv;
+	}
+
+	public void setLabelaNaziv(JLabel labelaNaziv) {
+		this.labelaNaziv = labelaNaziv;
+	}
+
+	public JLabel getLabelaOcena() {
+		return labelaOcena;
+	}
+
+	public void setLabelaOcena(JLabel labelaOcena) {
+		this.labelaOcena = labelaOcena;
+	}
+
+	public JLabel getLabelaDatum() {
+		return labelaDatum;
+	}
+
+	public void setLabelaDatum(JLabel labelaDatum) {
+		this.labelaDatum = labelaDatum;
+	}
+
+	public JTextField getTxtSifra() {
+		return txtSifra;
+	}
+
+	public void setTxtSifra(JTextField txtSifra) {
+		this.txtSifra = txtSifra;
+	}
+
+	public JTextField getTxtNaziv() {
+		return txtNaziv;
+	}
+
+	public void setTxtNaziv(JTextField txtNaziv) {
+		this.txtNaziv = txtNaziv;
+	}
+
+	public JComboBox<String> getCmbOcena() {
+		return cmbOcena;
+	}
+
+	public void setCmbOcena(JComboBox<String> cmbOcena) {
+		this.cmbOcena = cmbOcena;
+	}
+
+	public JTextField getTxtDatum() {
+		return txtDatum;
+	}
+
+	public void setTxtDatum(JTextField txtDatum) {
+		this.txtDatum = txtDatum;
+	}
+
+	public JButton getBtnPotvrdi() {
+		return btnPotvrdi;
+	}
+
+	public void setBtnPotvrdi(JButton btnPotvrdi) {
+		this.btnPotvrdi = btnPotvrdi;
+	}
+
+	public JButton getBtnOdustani() {
+		return btnOdustani;
+	}
+
+	public void setBtnOdustani(JButton btnOdustani) {
+		this.btnOdustani = btnOdustani;
+	}
+	
+	
+
 }

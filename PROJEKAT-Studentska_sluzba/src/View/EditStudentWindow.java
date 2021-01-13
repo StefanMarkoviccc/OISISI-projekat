@@ -487,18 +487,7 @@ public class EditStudentWindow  extends JFrame
 	}
 	
 	
-	public static void fillNepolozeni() 
-	{
-		int index=MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
-		Student student=MainWindow.getInstance().getModel().getStudenti().get(index);
-		ArrayList<Predmet> predmeti=student.getNepolozeniPredmeti();
-		System.out.println(predmeti.size());
-		for(Predmet pred : predmeti) 
-		{
-			Object[] o= {pred.getSifraPr(),pred.getNazivPr(),pred.getEspb(),pred.getGodStudija(),pred.getSemestar()};
-			EditStudentWindow.getInstance().getTmNepolozeni().addRow(o);
-		}
-	}
+	
 	
 	public static void Calculate() 
 	{
@@ -526,6 +515,35 @@ public class EditStudentWindow  extends JFrame
 		labelaUkupno.setText("ESPB: "+espb);
 	}
 	
+	
+
+	public static void fillNepolozeni()
+	{
+		int ind = MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
+		Student s= MainWindow.getInstance().getModel().getStudenti().get(ind);
+		ArrayList<Predmet> predmeti =s.getNepolozeniPredmeti();
+		for(Predmet p : predmeti)
+		{
+			Object[] data = {	p.getSifraPr(),p.getNazivPr(),p.getEspb(),p.getGodStudija(),p.getSemestar()};
+			EditStudentWindow.getInstance().getTmNepolozeni().addRow(data);
+		}
+	}
+	
+	public static void fillPolozeni()
+	{
+		int index= MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
+		Student s= MainWindow.getInstance().getModel().getStudenti().get(index);
+		ArrayList<Ocena> ocene=s.getOcene();
+		for(Ocena o : ocene)
+		{
+			
+				Object[] data= {o.getPredmet().getSifraPr(), o.getPredmet().getNazivPr(), o.getPredmet().getEspb(), o.getOcena(), o.getDatumPolaganja()};
+				EditStudentWindow.getInstance().getTmPolozeni().addRow(data);
+				
+				
+			
+		}
+	}
 
 }
 
