@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
+import DataSave.Configuration;
 import Model.Predmet;
 import Model.Profesor;
 import Model.Student;
@@ -16,7 +17,7 @@ public class ButtonSearchController extends AbstractAction {
 
 	public ButtonSearchController() 
 	{
-		super("Search");
+		super("Search",Configuration.pretragaIcon);
 	}
 	
 	@Override

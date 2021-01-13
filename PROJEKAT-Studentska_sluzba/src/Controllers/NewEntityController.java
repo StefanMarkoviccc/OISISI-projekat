@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import DataSave.Configuration;
 import View.MainWindow;
 import View.NewPredmetWindow;
 import View.NewProfesorWindow;
@@ -39,6 +40,6 @@ public class NewEntityController extends AbstractAction
 	public NewEntityController()
 	{
 		 
-		super("Dodaj");
+		super("Dodaj",Configuration.addIcon);
 	}	
 }

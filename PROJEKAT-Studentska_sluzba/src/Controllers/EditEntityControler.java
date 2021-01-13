@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import DataSave.Configuration;
 import Enums.Titula;
 import Enums.Zvanje;
 import Model.Predmet;
@@ -18,7 +19,7 @@ public class EditEntityControler extends AbstractAction {
 
 	 public EditEntityControler() 
 	 {
-		super("Edit");
+		super("Edit",Configuration.editIcon);
 	 }
 	@Override
 	public void actionPerformed(ActionEvent arg0) 

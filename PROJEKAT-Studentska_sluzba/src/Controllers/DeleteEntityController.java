@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import DataSave.Configuration;
 import View.DeleteEntityWindow;
 import View.MainWindow;
 
@@ -12,7 +13,7 @@ public class DeleteEntityController extends AbstractAction
 
 	public DeleteEntityController() 
 	{
-		super("Delete");
+		super("Delete",Configuration.deleteIcon);
 	
 	}
 	@Override
