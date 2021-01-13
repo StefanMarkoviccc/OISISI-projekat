@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-
+import javax.swing.JComboBox;
 import Controllers.ButtonOdustaniControllerProf;
 import Controllers.ButtonPotvrdiControllerProf;
 import Controllers.PotvrdiIzmenuProfesora;
@@ -43,6 +43,8 @@ public class EditProfesorWindow extends JFrame{
 	private JLabel lblBrojLicneKarte;
 	private JLabel lblTitula;
 	private JLabel lblZvanje;
+	private JComboBox<String> cmbTitula;
+	private JComboBox<String> cmbZvanje;
 
 	
 	private JButton btnPotvrdi;
@@ -62,6 +64,23 @@ public class EditProfesorWindow extends JFrame{
 	
 	public EditProfesorWindow() 
 	{
+		cmbTitula= new JComboBox<String>();
+		cmbZvanje= new JComboBox<String>();
+		cmbTitula.addItem("BCs");
+		cmbTitula.addItem("MSc");
+		cmbTitula.addItem("prof_dr");
+		cmbTitula.addItem("mr");
+		cmbTitula.addItem("dr");
+	
+		cmbZvanje.addItem("saradnik_u_nastavi");
+		cmbZvanje.addItem("asistent");
+		cmbZvanje.addItem("asistent_sa_doktoratom");
+		cmbZvanje.addItem("docent");
+		cmbZvanje.addItem("radovni_profesor");
+
+		cmbZvanje.addItem("vanredni_profesor");
+		cmbZvanje.addItem("profesor_emeritus");
+
 		tabs= new JTabbedPane();
 		predmetiPanel= new PredmetiPanel();
 		Dimension dim= new Dimension(200,20);
@@ -166,9 +185,9 @@ public class EditProfesorWindow extends JFrame{
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(txtBrojLicneKarte);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtTitula);
+		desno.add(cmbTitula);
 		desno.add(Box.createVerticalStrut(10));
-		desno.add(txtZvanje);
+		desno.add(cmbZvanje);
 		desno.add(Box.createVerticalStrut(10));
 		desno.add(btnOdustani);
 		desno.add(Box.createVerticalStrut(10));
@@ -355,6 +374,38 @@ public class EditProfesorWindow extends JFrame{
 
 	public void setBtnOdustani(JButton btnOdustani) {
 		this.btnOdustani = btnOdustani;
+	}
+
+	public PredmetiPanel getPredmetiPanel() {
+		return predmetiPanel;
+	}
+
+	public void setPredmetiPanel(PredmetiPanel predmetiPanel) {
+		this.predmetiPanel = predmetiPanel;
+	}
+
+	public JTabbedPane getTabs() {
+		return tabs;
+	}
+
+	public void setTabs(JTabbedPane tabs) {
+		this.tabs = tabs;
+	}
+
+	public JComboBox<String> getCmbTitula() {
+		return cmbTitula;
+	}
+
+	public void setCmbTitula(JComboBox<String> cmbTitula) {
+		this.cmbTitula = cmbTitula;
+	}
+
+	public JComboBox<String> getCmbZvanje() {
+		return cmbZvanje;
+	}
+
+	public void setCmbZvanje(JComboBox<String> cmbZvanje) {
+		this.cmbZvanje = cmbZvanje;
 	}
 
 }

@@ -11,6 +11,8 @@ import Model.Profesor;
 import View.EditProfesorWindow;
 import View.MainWindow;
 import View.WorkSpace;
+import Enums.Titula;
+import Enums.Zvanje;
 
 public class PotvrdiIzmenuProfesora extends AbstractAction {
 	
@@ -25,7 +27,7 @@ public class PotvrdiIzmenuProfesora extends AbstractAction {
 	int row = MainWindow.getInstance().getWorkSpace().getTableProfesori().getSelectedRow();
 	Profesor prof = MainWindow.getInstance().getModel().getProfesori().get(row);
 	
-	String ime,prezime,datumR,adresaStan,brTel,mail,adresaKanc,brLK,titula,zvanje;
+	String ime,prezime,datumR,adresaStan,brTel,mail,adresaKanc,brLK;
 	
 	ime = EditProfesorWindow.getInstance().getTxtIme().getText();
 	prezime = EditProfesorWindow.getInstance().getTxtPrezime().getText();
@@ -40,8 +42,76 @@ public class PotvrdiIzmenuProfesora extends AbstractAction {
     mail = EditProfesorWindow.getInstance().getTxtEmail().getText();
     adresaKanc = EditProfesorWindow.getInstance().getLblAdresaKancelarije().getText();
     brLK = EditProfesorWindow.getInstance().getTxtBrojLicneKarte().getText();
-    titula = EditProfesorWindow.getInstance().getTxtTitula().getText();
-    zvanje = EditProfesorWindow.getInstance().getTxtZvanje().getText();
+    int indT = EditProfesorWindow.getInstance().getCmbTitula().getSelectedIndex();
+    int indZ = EditProfesorWindow.getInstance().getCmbZvanje().getSelectedIndex();
+    
+    Titula titula;
+    Zvanje zvanje;
+    
+    if(indT==0) 
+    {
+    	titula=Titula.BCs;
+    }
+    else if(indT==1) 
+    {
+    	titula=Titula.MSc;
+    	
+    }
+    else if(indT==2) 
+    {
+    	
+    	titula=Titula.dr;
+    }
+    else if(indT==3) 
+    {
+    	titula=Titula.mr;
+    	
+    }
+    else  
+    {
+    	titula=Titula.prof_dr;
+    	
+    }
+    
+    if(indZ==0) 
+    {
+    	zvanje=Zvanje.saradnik_u_nastavi;
+    	
+    }
+    else if(indZ==1) 
+    {
+    	zvanje=Zvanje.asistent;
+
+    	
+    }
+    else if(indZ==2) 
+    {
+    	
+    	zvanje=Zvanje.asistent_sa_doktoratom;
+
+    }
+    else if(indZ==3) 
+    {
+    	zvanje=Zvanje.docent;
+
+    	
+    }
+    else if(indZ==4) 
+    {
+    	zvanje=Zvanje.vanredni_profesor;
+
+    	
+    }
+    else if(indZ==5) 
+    {
+    	zvanje=Zvanje.vanredni_profesor;
+
+    	
+    }
+    else 
+    {
+    	zvanje=Zvanje.profesor_emeritus;
+    }
     
     prof.setIme(ime);
     prof.setPrezime(prezime);
