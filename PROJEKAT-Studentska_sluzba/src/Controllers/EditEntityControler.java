@@ -43,7 +43,7 @@ public class EditEntityControler extends AbstractAction {
 			EditStudentWindow.getInstance().getTxtPrezime().setText(stud.getPrezime());
 			EditStudentWindow.getInstance().getTxtGodUpisa().setText(String.valueOf(stud.getGodUpisa()));
 			EditStudentWindow.fillNepolozeni();
-
+			EditStudentWindow.Calculate();
 			EditStudentWindow.getInstance().show();
 			
 		}

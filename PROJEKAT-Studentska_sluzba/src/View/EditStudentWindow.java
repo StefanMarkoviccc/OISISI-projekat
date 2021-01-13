@@ -26,12 +26,15 @@ import Controllers.PotvrdiIzmenuStudenta;
 import Controllers.StudentToPredmetController;
 import Controllers.UklanjanjePredmetaStudentuController;
 import Controllers.UnosOceneController;
+import Model.Ocena;
 import Model.Predmet;
 import Model.Student;
 
 public class EditStudentWindow  extends JFrame
 {
 
+	private static JLabel labelaProsecna;
+	private static JLabel labelaUkupno;
 	private JTabbedPane tabs;
 	private JTextField txtIme;
 	private JTextField txtPrezime;
@@ -189,7 +192,6 @@ public class EditStudentWindow  extends JFrame
 		right.add(btnOdustani);
 		right.add(Box.createVerticalStrut(20));
 
-
 		mainPanel.add(left);
 		mainPanel.add(right);
 		JPanel pnlBlank = new JPanel();
@@ -207,8 +209,8 @@ public class EditStudentWindow  extends JFrame
 		tmPolozeni = new DefaultTableModel(polozeni,0);
 		tablePolozeni = new JTable(tmPolozeni);
 		JButton btnPonisti = new JButton(new PonistiOcenuController());
-		JLabel labelaProsecna = new JLabel("Prosecna ocena:");
-		JLabel labelaUkupno = new JLabel("Ukupno ESPB:");
+		 labelaProsecna = new JLabel("Prosecna ocena:");
+		 labelaUkupno = new JLabel("Ukupno ESPB:");
 		
 		JScrollPane scrollPolozeni = new JScrollPane(tablePolozeni);
 		
@@ -496,6 +498,32 @@ public class EditStudentWindow  extends JFrame
 			Object[] o= {pred.getSifraPr(),pred.getNazivPr(),pred.getEspb(),pred.getGodStudija(),pred.getSemestar()};
 			EditStudentWindow.getInstance().getTmNepolozeni().addRow(o);
 		}
+	}
+	
+	public static void Calculate() 
+	{
+		double suma=0;
+		int espb=0;
+		int index=MainWindow.getInstance().getWorkSpace().getTableStudenti().getSelectedRow();
+		if(index==-1) 
+		{
+			return ;
+		}
+		Student student=MainWindow.getInstance().getModel().getStudenti().get(index);
+		ArrayList<Ocena> ocene=student.getOcene();
+		for(Ocena o : ocene) 
+		{
+			suma+=o.getOcena();
+			espb=o.getPredmet().getEspb();
+		}
+		double p=0;
+		if(ocene.size()!=0) 
+		{
+			p=suma/ocene.size();
+		}
+		
+		labelaProsecna.setText("Prosecna ocena: "+p);
+		labelaUkupno.setText("ESPB: "+espb);
 	}
 	
 
