@@ -30,15 +30,8 @@ public class PredmetiPanel  extends JPanel
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int ind=EditProfesorWindow.getInstance().getPredmetiPanel().getTablePredmeti().getSelectedRow();
-				int indP=MainWindow.getInstance().getWorkSpace().getTableProfesori().getSelectedRow();
-				Profesor p= MainWindow.getInstance().getModel().getProfesori().get(indP);
-				p.getPredmeti().remove(ind);
-				if(ind!=-1) 
-				{
-					EditProfesorWindow.getInstance().getPredmetiPanel().getDtmPredmeti().removeRow(ind);
-					
-				}
+				UklanjanjePredmetaProfesoruWindow.getInstance().show();
+
 				
 			}
 		});
